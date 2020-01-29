@@ -1,0 +1,44 @@
+{
+  "verbose": true,
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ],
+    "paths": {
+      "*": ["types/*"],
+      "loader": [".loader"],
+      "@/*": ["src/*"],
+      "@@/*": ["src/modules/*"],
+      "atoms": ["src/components/atoms"],
+      "molecules": ["src/components/molecules"],
+      "organism": ["src/components/organism"],
+      "templates": ["src/components/templates"],
+      "vue$": ["vue/dist/vue.common.js"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx"
+  ]
+}
