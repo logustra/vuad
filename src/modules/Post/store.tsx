@@ -1,7 +1,9 @@
-import PostList from './stores/PostList'
+import PostIndex from './stores/PostIndex'
 import PostDetail from './stores/PostDetail'
+import PostAuthor from './stores/postAuthor'
 
 export default {
-  PostList,
-  PostDetail
+  PostIndex,
+  PostDetail,
+  PostAuthor
 }

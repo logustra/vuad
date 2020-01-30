@@ -1,4 +1,4 @@
-import * as types from './postListTypes'
+import * as types from './postIndexTypes'
 import { PostListState, PostListModel, AuthorListModel } from '../../contracts/postListContracts'
 
 export default {

@@ -1,9 +1,9 @@
 <template>
   <div class="post-list">
-    <Loading v-if="postList.isFetching" />
+    <Loading v-if="data.isFetching" />
     <div v-else>
       <div 
-        v-for="item in postList.data" 
+        v-for="item in data.data" 
         :key="`post-${item.id}`" 
       >
         <Card>
@@ -27,9 +27,6 @@
                 name: 'post.author', 
                 params: { 
                   id: item.userId 
-                },
-                query: {
-                  author: JSON.stringify(item.author)
                 }
               }"
             >
@@ -48,10 +45,6 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { Getter, Action } from 'vuex-class'
-
-import { PostListState } from '../../contracts/postListContracts'
-import { POST_LIST_REQUEST, AUTHOR_LIST_REQUEST } from '../../stores/PostList/postListTypes'
 
 import { Loading } from 'atoms'
 import { Card } from 'templates'
@@ -61,19 +54,13 @@ const Props = Vue.extend({
     withAuthor: {
       type: Boolean,
       required: false,
-      default: true
-    },
-
-    byAuthor: {
-      type: Boolean,
-      required: false,
       default: false
     },
 
-    author: {
-      type: Number,
-      required: false,
-      default: 0
+    data: {
+      type: Object,
+      required: true,
+      default: () => ({})
     }
   }
 })
@@ -85,29 +72,7 @@ const Props = Vue.extend({
   }
 })
 
-export default class PostList extends Props {
-  @Getter('authorList') 
-  public authorList
-
-  @Getter('postList') 
-  public postList
-
-  @Action(AUTHOR_LIST_REQUEST)
-  public authorListRequest
-
-  @Action(POST_LIST_REQUEST)
-  public postListRequest
-
-  public async mounted() {
-    await this.authorListRequest()
-    
-    if (this.byAuthor) {
-      await this.postListRequest({ userId: this.author })
-    } else {
-      await this.postListRequest()
-    }
-  }
-}
+export default class PostList extends Props {}
 </script>
 
 <style lang="scss">

@@ -1,6 +1,6 @@
 import { postService } from '../../services'
 import { API_POST_LIST, API_AUTHOR_LIST } from '../../constants/postEndpoints'
-import * as types from './postListTypes'
+import * as types from './postIndexTypes'
 
 export default {
   [types.AUTHOR_LIST_REQUEST]: async ({ commit }: any) => {

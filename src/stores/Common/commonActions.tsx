@@ -1,7 +1,7 @@
 import * as types from './commonTypes'
 
 export default {
-  [types.SET_HEADER_TITLE]: ({ commit }: any, context: any) => {
-    commit(types.SET_HEADER_TITLE, context)
+  [types.SET_TITLE]: ({ commit }: any, title: string) => {
+    commit(types.SET_TITLE, title)
   }
 }

@@ -5,6 +5,19 @@
       <h2 class="title">
         {{ postDetail.data.title }}
       </h2>
+      <div>
+        Written by 
+        <RouterLink 
+          :to="{ 
+            name: 'post.author', 
+            params: { 
+              id: postDetail.data.userId 
+            }
+          }"
+        >
+          {{ authorDetail.data.name }}
+        </RouterLink>
+      </div>
 
       <div class="description">
         {{ postDetail.data.body }}
@@ -38,6 +51,9 @@ import { Getter, Action } from 'vuex-class'
 
 import { PostDetailState } from '../contracts/postDetailContracts'
 import { POST_DETAIL_REQUEST, POST_COMMENT_LIST_REQUEST } from '../stores/PostDetail/postDetailTypes'
+import { AUTHOR_DETAIL_REQUEST } from '../stores/postAuthor/postAuthorTypes'
+
+import { SET_TITLE } from '@/stores/Common/commonTypes'
 
 import { Loading } from 'atoms'
 import { Card } from 'templates'
@@ -55,11 +71,20 @@ export default class PostAuthor extends Vue {
   @Getter('postDetail') 
   public postDetail
 
+  @Getter('authorDetail') 
+  public authorDetail
+
   @Getter('postCommentList') 
   public postCommentList
 
   @Action(POST_DETAIL_REQUEST)
   public postDetailRequest
+
+  @Action(SET_TITLE)
+  public setTitle
+
+  @Action(AUTHOR_DETAIL_REQUEST)
+  public authorDetailRequest
 
   @Action(POST_COMMENT_LIST_REQUEST)
   public postCommentListRequest
@@ -67,6 +92,8 @@ export default class PostAuthor extends Vue {
   async mounted() {
     this.id = parseInt((this.$route.params.id as string))
     await this.postDetailRequest(this.id)
+    await this.authorDetailRequest(this.postDetail.data.userId)
+    await this.setTitle(this.postDetail.data.title)
     await this.postCommentListRequest({ postId: this.id })
   }
 }
@@ -75,5 +102,9 @@ export default class PostAuthor extends Vue {
 <style lang="scss" scoped>
 .post-detail .card {
   margin-bottom: rem(16px);
+
+  a {
+    text-decoration: none;
+  }
 }
 </style>
