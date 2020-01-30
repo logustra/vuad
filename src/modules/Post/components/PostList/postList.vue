@@ -48,7 +48,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { State, Action } from 'vuex-class'
+import { Getter, Action } from 'vuex-class'
 
 import { PostListState } from '../../contracts/postListContracts'
 import { POST_LIST_REQUEST, AUTHOR_LIST_REQUEST } from '../../stores/PostList/postListTypes'
@@ -86,8 +86,11 @@ const Props = Vue.extend({
 })
 
 export default class PostList extends Props {
-  @State(({ PostList }) => PostList.postList) 
-  public postList!: PostListState
+  @Getter('authorList') 
+  public authorList
+
+  @Getter('postList') 
+  public postList
 
   @Action(AUTHOR_LIST_REQUEST)
   public authorListRequest
