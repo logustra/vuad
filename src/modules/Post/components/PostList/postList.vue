@@ -4,12 +4,21 @@
     <div v-else>
       <div 
         v-for="item in postList.data" 
-        :key="item.id" 
+        :key="`post-${item.id}`" 
       >
         <Card>
-          <h3 class="title">
-            {{ item.title }}
-          </h3>
+          <RouterLink 
+            :to="{
+              name: 'post.detail',
+              params: {
+                id: item.id
+              }
+            }"
+          >
+            <h3 class="title">
+              {{ item.title }}
+            </h3>
+          </RouterLink>
 
           <div v-if="withAuthor && item.author">
             Written by 

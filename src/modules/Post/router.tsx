@@ -6,6 +6,12 @@ export default [
   },
 
   {
+    path: '/post/:id',
+    name: 'post.detail',
+    component: () => import('./views/PostDetail.vue')
+  },
+
+  {
     path: '/author/:id',
     name: 'post.author',
     component: () => import('./views/PostAuthor.vue')

@@ -17,6 +17,15 @@ export default class Card extends Vue {}
   border-radius: rem(6px);
   background-color: $white;
 
+  > a {
+    color: $black;
+    text-decoration: none;
+
+    ~ div > a {
+      text-decoration: none;
+    }
+  }
+
   .title {
     margin-top: 0;
     margin-bottom: rem(2px);
