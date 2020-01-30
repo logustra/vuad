@@ -12,6 +12,8 @@
         Website: {{ author.website }}
       </div>
     </Card>
+
+    <h3>Posted Article</h3>
     <PostList 
       :withAuthor="false"
       byAuthor
