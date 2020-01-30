@@ -1,10 +1,21 @@
 <template>
-  <div>
-    <h2>{{ $route.query.name }}</h2>
+  <div class="post-author">
+    <Card>
+      <h2 class="title">
+        {{ author.name }}
+      </h2>
+
+      <hr />
+
+      <div>
+        Email: {{ author.email }} <br />
+        Website: {{ author.website }}
+      </div>
+    </Card>
     <PostList 
       :withAuthor="false"
       byAuthor
-      :author="$route.params.id"
+      :author="parseInt($route.params.id)"
     />
   </div>
 </template>
@@ -13,13 +24,30 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { State, Action } from 'vuex-class'
 
+import { AuthorListModel } from '../contracts/postListContracts'
+
 import { PostList } from '../components'
+
+import { Card } from 'templates'
 
 @Component({
   components: {
-    PostList
+    PostList,
+    Card
   }
 })
 
-export default class PostAuthor extends Vue {}
+export default class PostAuthor extends Vue {
+  author: {[key: string]: AuthorListModel} = {}
+
+  mounted() {
+    this.author = JSON.parse((this.$route.query.author as string))
+  }
+}
 </script>
+
+<style lang="scss" scoped>
+.post-author .card {
+  margin-bottom: rem(16px);
+}
+</style>

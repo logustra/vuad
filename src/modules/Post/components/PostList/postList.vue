@@ -20,7 +20,7 @@
                   id: item.userId 
                 },
                 query: {
-                  name: item.author.name
+                  author: JSON.stringify(item.author)
                 }
               }"
             >
