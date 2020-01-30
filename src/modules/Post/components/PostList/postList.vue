@@ -11,14 +11,24 @@
             {{ item.title }}
           </h3>
 
-          <div 
-            v-if="item.author"
-            class="author"
-          >
-            Written by {{ item.author.name }}
+          <div v-if="withAuthor && item.author">
+            Written by 
+            <RouterLink 
+              :to="{ 
+                name: 'post.author', 
+                params: { 
+                  id: item.userId 
+                },
+                query: {
+                  name: item.author.name
+                }
+              }"
+            >
+              {{ item.author.name }}
+            </RouterLink>
           </div>
 
-          <div>
+          <div class="description">
             {{ item.body }}
           </div>
         </Card>
@@ -37,6 +47,28 @@ import { POST_LIST_REQUEST, AUTHOR_LIST_REQUEST } from '../../stores/PostList/po
 import { Loading } from 'atoms'
 import { Card } from 'templates'
 
+const Props = Vue.extend({
+  props: {
+    withAuthor: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+
+    byAuthor: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    author: {
+      type: Number,
+      required: false,
+      default: 0
+    }
+  }
+})
+
 @Component({
   components: {
     Loading,
@@ -44,7 +76,7 @@ import { Card } from 'templates'
   }
 })
 
-export default class PostList extends Vue {
+export default class PostList extends Props {
   @State(({ PostList }) => PostList.postList) 
   public postList!: PostListState
 
@@ -56,7 +88,12 @@ export default class PostList extends Vue {
 
   public async mounted() {
     await this.authorListRequest()
-    await this.postListRequest()
+    
+    if (this.byAuthor) {
+      await this.postListRequest({ userId: this.author })
+    } else {
+      await this.postListRequest()
+    }
   }
 }
 </script>

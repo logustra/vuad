@@ -7,9 +7,9 @@ export default class PostService {
     this.http = http
   }
 
-  public async get(url: string) {
+  public async get(url: string, params?: {}) {
     try {
-      return await this.http.get(url)
+      return await this.http.get(url, params)
     } catch (error) {
       throw error
     }

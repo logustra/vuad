@@ -13,9 +13,9 @@ export default {
     }
   },
   
-  [types.POST_LIST_REQUEST]: async ({ commit }: any) => {
+  [types.POST_LIST_REQUEST]: async ({ commit }: any, params: {}) => {
     try {
-      const { data } = await postService.get(API_POST_LIST)
+      const { data } = await postService.get(API_POST_LIST, params)
 
       commit(types.POST_LIST_SUCCESS, data)
     } catch (error) {

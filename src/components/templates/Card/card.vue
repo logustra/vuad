@@ -23,8 +23,8 @@ export default class Card extends Vue {}
     font-weight: 700;
   }
 
-  .author {
-    margin-bottom: rem(12px);
+  .description {
+    margin-top: rem(12px);
   }
 }
 </style>
