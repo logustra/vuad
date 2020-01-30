@@ -1,5 +1,5 @@
-import PostIndex from './stores/PostIndex'
+import PostList from './stores/PostList'
 
 export default {
-  PostIndex
+  PostList
 }

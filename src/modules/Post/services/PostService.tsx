@@ -1,5 +1,4 @@
 import Http from '@/services/Http'
-import { API_POST } from '../constants/postEndpoints'
 
 export default class PostService {
   protected http: Http
@@ -8,9 +7,9 @@ export default class PostService {
     this.http = http
   }
 
-  public async get() {
+  public async get(url: string) {
     try {
-      return await this.http.get(API_POST)
+      return await this.http.get(url)
     } catch (error) {
       throw error
     }
