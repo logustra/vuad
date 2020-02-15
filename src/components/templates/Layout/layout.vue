@@ -1,6 +1,8 @@
 <template>
   <div class="layout">
-    <slot />
+    <div class="layout-container">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -13,7 +15,12 @@ export default class Layout extends Vue {}
 
 <style lang="scss">
 .layout {
-  width: rem(480px);
-  padding: rem(16px);
+  display: flex;
+  justify-content: center;
+
+  &-container {
+    width: rem(480px);
+    padding: rem(16px);
+  }
 }
 </style>
