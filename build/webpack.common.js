@@ -10,6 +10,7 @@ module.exports = {
     filename: '[name].[hash].js',
     publicPath: '/'
   },
+  
   module: {
     rules: [
       {
@@ -26,33 +27,27 @@ module.exports = {
           }
         ]
       },
+
       {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif|ttf|otf|eof|woff)$/,
-        use: ['file-loader']
       }
     ]
   },
   plugins: [
     new VueLoaderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        BASE_URL: '"/"'
-      }
-    }),
     new Dotenv({
       path: './.env'
     }),
+    
     new webpack.HashedModuleIdsPlugin({
       hashFunction: 'sha256',
       hashDigest: 'hex',
       hashDigestLength: 7
     })
   ],
+
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
