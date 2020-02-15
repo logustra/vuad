@@ -72,12 +72,7 @@ const Props = Vue.extend({
   }
 })
 
-export default class PostList extends Props {
-
-  mounted () {
-    console.log(this.data.isFetching)
-  }
-}
+export default class PostList extends Props {}
 </script>
 
 <style lang="scss">
