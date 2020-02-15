@@ -1,13 +1,13 @@
 export default () => ({
   postList: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   },
 
   authorList: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   }
 })

@@ -4,6 +4,8 @@ import * as types from './postDetailTypes'
 
 export default {  
   [types.POST_DETAIL_REQUEST]: async ({ commit }: any, id: number) => {
+    commit(types.POST_DETAIL_REQUEST)
+
     try {
       const { data } = await postService.get(API_POST_DETAIL + id)
 
@@ -14,6 +16,8 @@ export default {
   },
 
   [types.POST_COMMENT_LIST_REQUEST]: async ({ commit }: any, params: {}) => {
+    commit(types.POST_COMMENT_LIST_REQUEST)
+
     try {
       const { data } = await postService.get(API_COMMENT_LIST, params)
 

@@ -1,13 +1,13 @@
 export default () => ({
   postDetail: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   },
 
   postCommentList: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   }
 })

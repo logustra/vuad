@@ -2,6 +2,10 @@ import * as types from './postAuthorTypes'
 import { PostAuthorState, PostListModel, AuthorDetailModel } from '../../contracts/postAuthorContracts'
 
 export default {
+  [types.AUTHOR_DETAIL_REQUEST]: (state: PostAuthorState) => {
+    state.authorDetail.isFetching = true
+  },
+
   [types.AUTHOR_DETAIL_SUCCESS]: (state: PostAuthorState, response: AuthorDetailModel) => {
     const { authorDetail } = state
 
@@ -20,6 +24,10 @@ export default {
     }
     authorDetail.isFetching = false,
     authorDetail.isError = error
+  },
+
+  [types.POST_AUTHOR_REQUEST]: (state: PostAuthorState) => {
+    state.postAuthor.isFetching = true
   },
 
   [types.POST_AUTHOR_SUCCESS]: (state: PostAuthorState, response: PostListModel[]) => {

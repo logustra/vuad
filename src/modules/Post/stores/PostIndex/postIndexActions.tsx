@@ -4,6 +4,8 @@ import * as types from './postIndexTypes'
 
 export default {
   [types.AUTHOR_LIST_REQUEST]: async ({ commit }: any) => {
+    commit(types.AUTHOR_LIST_REQUEST)
+
     try {
       const { data } = await postService.get(API_AUTHOR_LIST)
 
@@ -14,6 +16,8 @@ export default {
   },
   
   [types.POST_LIST_REQUEST]: async ({ commit }: any, params: {}) => {
+    commit(types.POST_LIST_REQUEST)
+
     try {
       const { data } = await postService.get(API_POST_LIST, params)
 

@@ -1,13 +1,13 @@
 export default () => ({
   authorDetail: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   },
 
   postAuthor: {
     data: [],
-    isFetching: true,
+    isFetching: false,
     isError: {}
   }
 })

@@ -2,6 +2,10 @@ import * as types from './postDetailTypes'
 import { PostDetailState, PostDetailModel, PostCommentModel } from '../../contracts/postDetailContracts'
 
 export default {
+  [types.POST_DETAIL_REQUEST]: (state: PostDetailState) => {
+    state.postDetail.isFetching = true
+  },
+
   [types.POST_DETAIL_SUCCESS]: (state: PostDetailState, response: PostDetailModel[]) => {
     const { postDetail } = state
 
@@ -15,6 +19,10 @@ export default {
     postDetail.data = []
     postDetail.isFetching = false,
     postDetail.isError = error
+  },
+
+  [types.POST_COMMENT_LIST_REQUEST]: (state: PostDetailState) => {
+    state.postCommentList.isFetching = true
   },
 
   [types.POST_COMMENT_LIST_SUCCESS]: (state: PostDetailState, response: PostCommentModel[]) => {

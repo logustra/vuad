@@ -2,6 +2,10 @@ import * as types from './postIndexTypes'
 import { PostListState, PostListModel, AuthorListModel } from '../../contracts/postListContracts'
 
 export default {
+  [types.AUTHOR_LIST_SUCCESS]: (state: PostListState) => {
+    state.authorList.isFetching = true
+  },
+
   [types.AUTHOR_LIST_SUCCESS]: (state: PostListState, response: AuthorListModel[]) => {
     const { authorList } = state
 
@@ -15,6 +19,10 @@ export default {
     authorList.data = []
     authorList.isFetching = false,
     authorList.isError = error
+  },
+
+  [types.POST_LIST_REQUEST]: (state: PostListState) => {
+    state.postList.isFetching = true
   },
 
   [types.POST_LIST_SUCCESS]: (state: PostListState, response: PostListModel[]) => {
