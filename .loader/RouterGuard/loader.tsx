@@ -6,7 +6,7 @@ export default class Loader {
   private count
 
   public constructor(color: string) {
-    this.LOADING_COLOR = color || '#f58220'
+    this.LOADING_COLOR = color
   }
 
   public render() {
