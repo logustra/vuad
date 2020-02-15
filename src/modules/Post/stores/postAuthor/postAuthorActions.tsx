@@ -4,6 +4,8 @@ import * as types from './postAuthorTypes'
 
 export default {
   [types.AUTHOR_DETAIL_REQUEST]: async ({ commit }: any, id: number) => {
+    commit(types.AUTHOR_DETAIL_REQUEST)
+
     try {
       const { data } = await postService.get(API_AUTHOR_DETAIL + id)
 
@@ -14,6 +16,8 @@ export default {
   },
 
   [types.POST_AUTHOR_REQUEST]: async ({ commit }: any, params: {}) => {
+    commit(types.POST_AUTHOR_REQUEST)
+
     try {
       const { data } = await postService.get(API_POST_LIST, params)
 
