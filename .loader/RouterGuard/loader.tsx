@@ -5,11 +5,11 @@ export default class Loader {
   private opacity = 0
   private count
 
-  public constructor(color: string) {
+  public constructor (color: string) {
     this.LOADING_COLOR = color
   }
 
-  public render() {
+  public render () {
     if (this.CONTAINER) this.CONTAINER
       .setAttribute(
         'style',
@@ -26,7 +26,7 @@ export default class Loader {
       )
   }
 
-  public clear() {
+  public clear () {
     clearInterval(this.count)
 
     this.opacity = 0
@@ -37,7 +37,7 @@ export default class Loader {
     }, 500)
   }
 
-  public start() {
+  public start () {
     this.time = 0
     this.opacity = 1
 
@@ -54,7 +54,7 @@ export default class Loader {
     }, 100)
   }
 
-  public stop() {
+  public stop () {
     this.time = 100
 
     this.render()
