@@ -59,7 +59,7 @@ module.exports = merge(common, {
               sourceMap: false,
               outputStyle: 'compressed',
               data: `
-                @import "@/assets/sass/index.scss";
+                @import "@/styles/index.scss";
               `
             }
           }

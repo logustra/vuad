@@ -71,7 +71,7 @@ module.exports = merge(common, {
               sourceMap: true,
               outputStyle: 'expanded',
               data: `
-                @import "@/assets/sass/index.scss";
+                @import "@/styles/index.scss";
               `
             }
           }

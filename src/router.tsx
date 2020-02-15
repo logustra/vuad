@@ -16,7 +16,7 @@ const router = new Router({
     {
       path: '*',
       name: 'notFound',
-      component: () => import('./views/notFound.vue.vue')
+      component: () => import('./views/notFound.vue')
     },
 
     ...domainModules
