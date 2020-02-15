@@ -1,5 +1,5 @@
 import { postService } from '../../services'
-import { API_POST_DETAIL, API_COMMENT_LIST } from '../../constants/postEndpoints'
+import { API_POST_DETAIL, API_COMMENT_LIST } from '../../constants/postConstants'
 import * as types from './postDetailTypes'
 
 export default {  
