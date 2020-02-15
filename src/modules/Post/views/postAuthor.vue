@@ -63,7 +63,7 @@ export default class PostAuthor extends Vue {
   async mounted() {
     this.id = parseInt((this.$route.params.id as string))
     await this.authorDetailRequest(this.id)
-    await this.setTitle(this.authorDetail.name)
+    await this.setTitle(this.authorDetail.data.name)
     await this.postAuthorRequest({ userId: this.id })
   }
 }
