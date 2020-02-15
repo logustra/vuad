@@ -19,6 +19,7 @@
       "node_modules/@types",
       "typings"
     ],
+    
     "paths": {
       "*": ["types/*"],
       "loader": [".loader"],
@@ -31,14 +32,17 @@
       "vue$": ["vue/dist/vue.common.js"]
     }
   },
+
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
+
   "exclude": [
     "node_modules",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx"
+    "build",
+    "public",
+    "server"
   ]
 }
