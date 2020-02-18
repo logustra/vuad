@@ -18,6 +18,7 @@ export default class Loader {
           opacity: ${this.opacity};
           position: fixed;
           top: 0;
+          left: 0;
           width: ${this.time}%;
           height: 0.125rem;
           background-color: ${this.LOADING_COLOR};
