@@ -51,7 +51,7 @@ import { Getter, Action } from 'vuex-class'
 
 import { PostDetailState } from '../contracts/postDetailContracts'
 import { POST_DETAIL_REQUEST, POST_COMMENT_LIST_REQUEST } from '../stores/PostDetail/postDetailTypes'
-import { AUTHOR_DETAIL_REQUEST } from '../stores/postAuthor/postAuthorTypes'
+import { AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
 
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 
