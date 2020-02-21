@@ -1,4 +1,5 @@
 import progress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 export default (router: any) => {
   progress.configure({ showSpinner: false })

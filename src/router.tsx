@@ -1,5 +1,5 @@
 import Router from 'vue-router'
-import { Preloader } from '@/libs'
+import { Preloader } from 'templates'
 
 const domainModuleFiles = require.context('./modules', true, /router.tsx/)
 const domainModules = domainModuleFiles.keys().reduce((carry: any, item: string) => {
