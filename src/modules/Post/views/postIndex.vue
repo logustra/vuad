@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2>Vuad</h2>
+    <Loading v-if="postList.isFetching" />
     <PostList 
+      v-else
       :withAuthor="true"
       :data="postList"
     />
@@ -16,9 +18,12 @@ import { AUTHOR_LIST_REQUEST, POST_LIST_REQUEST } from '../stores/PostIndex/post
 
 import { PostList } from '../components'
 
+import { Loading } from 'atoms'
+
 @Component({
   components: {
-    PostList
+    PostList,
+    Loading
   }
 })
 
