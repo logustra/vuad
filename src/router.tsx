@@ -1,7 +1,5 @@
 import Router from 'vue-router'
-import { RouterGuard } from 'loader'
-
-const LOADING_COLOR = process.env.LOADING_COLOR || ''
+import { Preloader } from '@/libs'
 
 const domainModuleFiles = require.context('./modules', true, /router.tsx/)
 const domainModules = domainModuleFiles.keys().reduce((carry: any, item: string) => {
@@ -23,4 +21,4 @@ const router = new Router({
   ]
 })
 
-export default RouterGuard(router, LOADING_COLOR)
+export default Preloader(router)

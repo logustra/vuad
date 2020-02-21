@@ -10,6 +10,7 @@ import router from './router'
 
 // Load Vue components, styles here.
 import App from './App.vue'
+import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false
 
