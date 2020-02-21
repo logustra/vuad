@@ -34,6 +34,7 @@ module.exports = merge(common, {
           }
         ]
       },
+      
       {
         test: /\.scss$/,
         use: [

@@ -1,6 +1,11 @@
 export default () => ({
   authorDetail: {
-    data: [],
+    data: {
+      id: 0,
+      name: '',
+      email: '',
+      website: ''
+    },
     isFetching: false,
     isError: {}
   },
