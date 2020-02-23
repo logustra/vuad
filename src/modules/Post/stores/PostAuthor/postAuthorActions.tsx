@@ -3,7 +3,7 @@ import { API_AUTHOR_DETAIL, API_POST_LIST } from '../../constants/postConstants'
 import { postService } from '../../services'
 
 export default {
-  [types.AUTHOR_DETAIL_REQUEST]: async ({ commit }: any, id: number) => {
+  [types.AUTHOR_DETAIL_REQUEST]: async ({ commit }: { commit: Function }, id: number) => {
     commit(types.AUTHOR_DETAIL_REQUEST)
 
     try {
@@ -15,7 +15,7 @@ export default {
     }
   },
 
-  [types.POST_AUTHOR_REQUEST]: async ({ commit }: any, params: {}) => {
+  [types.POST_AUTHOR_REQUEST]: async ({ commit }: { commit: Function }, params: {}) => {
     commit(types.POST_AUTHOR_REQUEST)
 
     try {
