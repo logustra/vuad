@@ -12,21 +12,31 @@
     "clean:dist": "rimraf dist",
     "start": "yarn build && node server"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/node": "^11.12.0",
     "@types/webpack-env": "^1.13.9",
     "axios": "^0.19.2",
     "babel-loader": "^8.0.5",
+    "commitizen": "^4.0.3",
     "core-js": "3.0.1",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^3.1.0",
     "dotenv-webpack": "^1.7.0",
     "html-webpack-plugin": "3.0.7",
+    "husky": "^4.2.3",
     "node-sass": "^4.11.0",
     "nprogress": "^0.2.0",
     "sass-loader": "^7.1.0",
