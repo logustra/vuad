@@ -3,7 +3,20 @@
   "version": "1.0.0",
   "description": "a Blog build with Vue, Typescript, Atomic Design & DDD",
   "main": "index.js",
-  "repository": "https://github.com/logustra/vuad",
+  "keywords": [
+    "vue",
+    "typescript",
+    "atomic-design",
+    "ddd",
+    "spa",
+    "atomic-design-example",
+    "ddd-example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logustra/vuad"
+  },
+  "bugs": "https://github.com/logustra/vuad/issues",
   "author": "Faizal Andyka Putra",
   "license": "MIT",
   "scripts": {
