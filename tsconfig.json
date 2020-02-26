@@ -6,6 +6,9 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+    "noEmit": true,
+    "incremental": true,
+    "isolatedModules": true,
     "importHelpers": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -22,7 +25,6 @@
     
     "paths": {
       "*": ["types/*"],
-      "loader": [".loader"],
       "@/*": ["src/*"],
       "@@/*": ["src/modules/*"],
       "atoms": ["src/components/atoms"],
@@ -43,6 +45,9 @@
     "node_modules",
     "build",
     "public",
-    "server"
+    "server",
+    "babel.config.js",
+    "commitlint.config.js",
+    "husky.config.js"
   ]
 }

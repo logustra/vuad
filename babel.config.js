@@ -9,11 +9,15 @@ module.exports = {
           'browsers': '> 5%'
         }
       }
-    ]
+    ],
+
+    '@babel/preset-typescript'
   ],
 
   plugins: [
+    '@babel/transform-typescript',
     '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-object-rest-spread',
     [
       '@babel/plugin-proposal-decorators', {
         'legacy': true

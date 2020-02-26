@@ -14,24 +14,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.jsx|tsx?$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader',
-          {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
-              appendTsxSuffixTo: [/\.vue$/]
-            }
-          }
-        ]
-      },
-
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        use: ['babel-loader']
       }
     ]
   },
@@ -51,7 +36,6 @@ module.exports = {
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      'loader': path.resolve(__dirname, '../.loader/'),
       '@': path.resolve(__dirname, '../src/'),
       '@@': path.resolve(__dirname, '../src/modules/'),
       'atoms': path.resolve(__dirname, '../src/components/atoms'),
