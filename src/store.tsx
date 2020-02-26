@@ -6,11 +6,11 @@ const domainModuleFiles = require.context('./modules', true, /store.tsx/)
 
 domainModuleFiles.keys().map((item: string) => {
   if (domainModuleFiles(item).default) {
-    for (let key in domainModuleFiles(item).default) {
+    for (const key in domainModuleFiles(item).default) {
       domainModules[key] = domainModuleFiles(item).default[key]
     }
   } else {
-    for (let key in domainModuleFiles(item)) {
+    for (const key in domainModuleFiles(item)) {
       domainModules[key] = domainModuleFiles(item)[key]
     }
   }

@@ -4,7 +4,7 @@
     <Loading v-if="postList.isFetching" />
     <PostList 
       v-else
-      :withAuthor="true"
+      :with-author="true"
       :data="postList"
     />
   </div>
@@ -40,7 +40,7 @@ export default class PostIndex extends Vue {
   @Action(POST_LIST_REQUEST)
   public postListRequest
 
-  async mounted() {
+  async mounted () {
     await this.authorListRequest()
     await this.postListRequest()
   }

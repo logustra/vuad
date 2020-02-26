@@ -22,7 +22,10 @@ module.exports = merge(common, {
       {
         test: /\.vue$/,
         exclude: /node_modules/,
-        loader: 'vue-loader'
+        use: [
+          'vue-loader', 
+          'eslint-loader'
+        ]
       },
 
       {

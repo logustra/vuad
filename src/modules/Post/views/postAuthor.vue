@@ -5,16 +5,16 @@
       <h2 class="title">
         {{ authorDetail.data.name }}
       </h2>
-      <hr />
+      <hr>
       <div>
-        Email: {{ authorDetail.data.email }} <br />
+        Email: {{ authorDetail.data.email }} <br>
         Website: {{ authorDetail.data.website }}
       </div>
     </Card>
 
     <h3>Posted Article</h3>
     <PostList 
-      :withAuthor="false"
+      :with-author="false"
       :data="postAuthor"
     />
   </div>
@@ -24,7 +24,6 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 
-import { AuthorListModel } from '../contracts/postListContracts'
 import { POST_AUTHOR_REQUEST, AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
 
 import { SET_TITLE } from '@/stores/Common/commonTypes'
@@ -43,7 +42,7 @@ import { Card } from 'templates'
 })
 
 export default class PostAuthor extends Vue {
-  id: number = 0
+  id = 0
 
   @Getter('authorDetail')
   public authorDetail
@@ -60,7 +59,7 @@ export default class PostAuthor extends Vue {
   @Action(POST_AUTHOR_REQUEST)
   public postAuthorRequest
 
-  async mounted() {
+  async mounted () {
     this.id = parseInt((this.$route.params.id as string))
     await this.authorDetailRequest(this.id)
     await this.setTitle(this.authorDetail.data.name)

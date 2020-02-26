@@ -9,7 +9,7 @@ export default (router: any) => {
     next()
   })
 
-  router.afterEach((to: any, from: any) => {
+  router.afterEach(() => {
     progress.done()
   })
 

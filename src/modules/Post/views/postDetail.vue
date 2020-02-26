@@ -49,7 +49,6 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 
-import { PostDetailState } from '../contracts/postDetailContracts'
 import { POST_DETAIL_REQUEST, POST_COMMENT_LIST_REQUEST } from '../stores/PostDetail/postDetailTypes'
 import { AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
 
@@ -66,7 +65,7 @@ import { Card } from 'templates'
 })
 
 export default class PostAuthor extends Vue {
-  id: number = 0
+  id = 0
 
   @Getter('postDetail') 
   public postDetail
@@ -89,7 +88,7 @@ export default class PostAuthor extends Vue {
   @Action(POST_COMMENT_LIST_REQUEST)
   public postCommentListRequest
 
-  async mounted() {
+  async mounted () {
     this.id = parseInt((this.$route.params.id as string))
     await this.postDetailRequest(this.id)
     await this.authorDetailRequest(this.postDetail.data.userId)
