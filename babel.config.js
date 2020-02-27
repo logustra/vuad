@@ -15,7 +15,7 @@ module.exports = {
   ],
 
   plugins: [
-    '@babel/transform-typescript',
+    '@babel/plugin-transform-typescript',
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-syntax-object-rest-spread',
     [
