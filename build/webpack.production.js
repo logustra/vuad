@@ -1,8 +1,11 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
-const ManifestPlugin = require('webpack-manifest-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -87,6 +90,12 @@ module.exports = merge(common, {
       minimize: true
     }),
 
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
+    }),
+
+    new TerserPlugin(),
+    new ResourceHintWebpackPlugin(),
     new ManifestPlugin()
   ],
 
