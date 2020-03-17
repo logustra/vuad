@@ -1,5 +1,9 @@
 import * as types from './postIndexTypes'
-import { PostListState, PostListModel, AuthorListModel } from '../../contracts/postListContracts'
+import { 
+  PostListState, 
+  PostListModel, 
+  AuthorListModel 
+} from '../../contracts/postListContracts'
 
 export default {
   [types.AUTHOR_LIST_SUCCESS]: (state: PostListState) => {

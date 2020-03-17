@@ -21,10 +21,19 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-import { Getter, Action } from 'vuex-class'
+import { 
+  Vue, 
+  Component 
+} from 'vue-property-decorator'
+import { 
+  Getter, 
+  Action 
+} from 'vuex-class'
 
-import { POST_AUTHOR_REQUEST, AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
+import { 
+  POST_AUTHOR_REQUEST, 
+  AUTHOR_DETAIL_REQUEST 
+} from '../stores/PostAuthor/postAuthorTypes'
 
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 

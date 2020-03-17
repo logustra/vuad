@@ -1,5 +1,9 @@
 import * as types from './postAuthorTypes'
-import { PostAuthorState, PostListModel, AuthorDetailModel } from '../../contracts/postAuthorContracts'
+import { 
+  PostAuthorState, 
+  PostListModel, 
+  AuthorDetailModel 
+} from '../../contracts/postAuthorContracts'
 
 export default {
   [types.AUTHOR_DETAIL_REQUEST]: (state: PostAuthorState) => {

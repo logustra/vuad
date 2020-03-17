@@ -44,7 +44,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { 
+  Vue, 
+  Component 
+} from 'vue-property-decorator'
 
 import { Loading } from 'atoms'
 import { Card } from 'templates'

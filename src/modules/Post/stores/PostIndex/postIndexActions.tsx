@@ -1,5 +1,8 @@
 import * as types from './postIndexTypes'
-import { API_POST_LIST, API_AUTHOR_LIST } from '../../constants/postConstants'
+import { 
+  API_POST_LIST, 
+  API_AUTHOR_LIST 
+} from '../../constants/postConstants'
 import { postService } from '../../services'
 
 export default {

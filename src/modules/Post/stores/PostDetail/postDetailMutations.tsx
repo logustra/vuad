@@ -1,5 +1,9 @@
 import * as types from './postDetailTypes'
-import { PostDetailState, PostDetailModel, PostCommentModel } from '../../contracts/postDetailContracts'
+import { 
+  PostDetailState, 
+  PostDetailModel, 
+  PostCommentModel 
+} from '../../contracts/postDetailContracts'
 
 export default {
   [types.POST_DETAIL_REQUEST]: (state: PostDetailState) => {

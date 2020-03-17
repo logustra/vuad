@@ -11,10 +11,19 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-import { Getter, Action } from 'vuex-class'
+import { 
+  Vue, 
+  Component 
+} from 'vue-property-decorator'
+import { 
+  Getter, 
+  Action 
+} from 'vuex-class'
 
-import { AUTHOR_LIST_REQUEST, POST_LIST_REQUEST } from '../stores/PostIndex/postIndexTypes'
+import { 
+  AUTHOR_LIST_REQUEST, 
+  POST_LIST_REQUEST 
+} from '../stores/PostIndex/postIndexTypes'
 
 import { PostList } from '../components'
 
