@@ -6,7 +6,7 @@
         v-for="item in data.data" 
         :key="`post-${item.id}`" 
       >
-        <VCard>
+        <VCard class="mb-4">
           <RouterLink 
             class="title"
             :to="{
@@ -77,12 +77,3 @@ const Props = Vue.extend({
 
 export default class PostList extends Props {}
 </script>
-
-<style lang="scss">
-.v-post-list {
-  // stylelint-disable-next-line
-  > .v-card {
-    margin-bottom: rem(16px)
-  }
-}
-</style>

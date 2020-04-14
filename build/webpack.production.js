@@ -34,6 +34,13 @@ module.exports = merge(common, {
               sourceMap: false,
               importLoaders: 2
             }
+          },
+
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
           }
         ]
       },
@@ -54,6 +61,13 @@ module.exports = merge(common, {
             options: {
               sourceMap: false,
               importLoaders: 2
+            }
+          },
+
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: false
             }
           },
 
@@ -109,7 +123,7 @@ module.exports = merge(common, {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name(module) {
+          name (module) {
             // get the name. E.g. node_modules/packageName/not/this/part.js
             // or node_modules/packageName
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]

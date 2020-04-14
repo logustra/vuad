@@ -16,26 +16,29 @@ export default class VCard extends Vue {}
 
 <style lang="scss">
 .v-card {
-  padding: rem(16px);
-  border-radius: rem(6px);
-  background-color: $white;
+  @apply 
+    p-4
+    rounded
+    bg-white;
 
   > .title {
-    color: $black;
-    text-decoration: none;
-    margin-top: 0;
-    margin-bottom: rem(2px);
-    font-size: rem(16px);
-    font-weight: 700;
+    @apply
+      mt-0
+      font-bold
+      text-base
+      text-black
+      no-underline;
   }
 
   // stylelint-disable-next-line
   .link {
-    text-decoration: none;
+    @apply
+      text-blue-500
+      no-underline;
   }
 
   > .description {
-    margin-top: rem(12px);
+    @apply mt-3;
   }
 }
 </style>

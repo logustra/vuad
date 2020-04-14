@@ -10,7 +10,9 @@
     "ddd",
     "spa",
     "atomic-design-example",
-    "ddd-example"
+    "ddd-example",
+    "boilerplate",
+    "vue-boilerplate"
   ],
   "repository": {
     "type": "git",
@@ -47,11 +49,13 @@
     "@babel/preset-typescript": "^7.8.3",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "@types/node": "^11.12.0",
     "@types/nprogress": "^0.2.0",
     "@types/webpack-env": "^1.13.9",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
+    "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
@@ -68,6 +72,7 @@
     "husky": "^4.2.3",
     "node-sass": "^4.11.0",
     "nprogress": "^0.2.0",
+    "postcss-loader": "^3.0.0",
     "resource-hints-webpack-plugin": "^0.0.2",
     "sass-loader": "^7.1.0",
     "script-ext-html-webpack-plugin": "^2.1.4",
@@ -76,6 +81,7 @@
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-rscss": "^0.4.0",
     "stylelint-scss": "^3.17.0",
+    "tailwindcss": "^1.2.0",
     "terser-webpack-plugin": "^2.3.5",
     "typescript": "^3.8.2",
     "vue": "^2.6.11",
@@ -97,7 +103,7 @@
     "express": "^4.16.4",
     "helmet": "^3.22.0",
     "iltorb": "^2.4.5",
-    "node-zopfli-es": "^1.0.3",
+    "node-zopfli-es": "^1.0.4",
     "shrink-ray-current": "^4.0.0"
   }
 }

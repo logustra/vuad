@@ -5,14 +5,19 @@
       <h2 class="title">
         {{ authorDetail.data.name }}
       </h2>
-      <hr>
+
+      <VDivider />
+
       <div>
         Email: {{ authorDetail.data.email }} <br>
         Website: {{ authorDetail.data.website }}
       </div>
     </VCard>
 
-    <h3>Posted Article</h3>
+    <h3 class="text-base font-bold my-4">
+      Posted Article
+    </h3>
+
     <PostList 
       :with-author="false"
       :data="postAuthor"
@@ -39,13 +44,17 @@ import { SET_TITLE } from '@/stores/commonTypes'
 
 import { PostList } from '../components'
 
-import { VLoading } from 'atoms'
+import { 
+  VDivider,
+  VLoading 
+} from 'atoms'
 import { VCard } from 'molecules'
 
 @Component({
   components: {
     PostList,
     VLoading,
+    VDivider,
     VCard
   }
 })
@@ -70,18 +79,10 @@ export default class PostAuthor extends Vue {
 
   async mounted () {
     this.id = parseInt((this.$route.params.id as string))
+    
     await this.authorDetailRequest(this.id)
-    await this.setTitle(this.authorDetail.data.name)
-    await this.postAuthorRequest({ userId: this.id })
+    this.setTitle(this.authorDetail.data.name)
+    this.postAuthorRequest({ userId: this.id })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.v-post-author {
-  // stylelint-disable-next-line
-  > .v-card {
-    margin-bottom: rem(16px)
-  }
-}
-</style>

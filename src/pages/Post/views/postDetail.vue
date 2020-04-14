@@ -5,6 +5,7 @@
       <h2 class="title">
         {{ postDetail.data.title }}
       </h2>
+
       <div>
         Written by 
         <RouterLink 
@@ -25,24 +26,25 @@
       </div>
     </VCard>
 
-    <div class="comment">
-      <h3>Comments</h3>
+    <h3 class="text-base font-bold my-4">
+      Comments
+    </h3>
 
-      <VLoading v-if="postCommentList.isFetching" />
-      <VCard
-        v-else
-        v-for="item in postCommentList.data"
-        :key="`comment-${item.id}`"
-      >
-        <h3 class="title">
-          {{ item.name }}
-        </h3>
+    <VLoading v-if="postCommentList.isFetching" />
+    <VCard
+      v-else
+      v-for="item in postCommentList.data"
+      :key="`comment-${item.id}`"
+      class="mb-4"
+    >
+      <h3 class="title">
+        {{ item.name }}
+      </h3>
 
-        <div class="description">
-          {{ item.body }}
-        </div>
-      </VCard>
-    </div>
+      <div class="description">
+        {{ item.body }}
+      </div>
+    </VCard>
   </div>
 </template>
 
@@ -100,19 +102,11 @@ export default class PostAuthor extends Vue {
 
   async mounted () {
     this.id = parseInt((this.$route.params.id as string))
+    
     await this.postDetailRequest(this.id)
-    await this.authorDetailRequest(this.postDetail.data.userId)
-    await this.setTitle(this.postDetail.data.title)
-    await this.postCommentListRequest({ postId: this.id })
+    this.authorDetailRequest(this.postDetail.data.userId)
+    this.setTitle(this.postDetail.data.title)
+    this.postCommentListRequest({ postId: this.id })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.v-post-detail {
-  // stylelint-disable-next-line
-  > .v-card {
-    margin-bottom: rem(16px)
-  }
-}
-</style>

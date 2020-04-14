@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h2>Vuad</h2>
+    <h2 class="text-xl font-bold mb-5">
+      Vuad
+    </h2>
+    
     <VLoading v-if="postList.isFetching" />
     <PostList 
       v-else
@@ -50,7 +53,7 @@ export default class PostIndex extends Vue {
   public postListRequest
 
   async mounted () {
-    await this.authorListRequest()
+    this.authorListRequest()
     await this.postListRequest()
   }
 }

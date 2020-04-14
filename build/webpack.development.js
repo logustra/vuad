@@ -45,6 +45,13 @@ module.exports = merge(common, {
               sourceMap: true,
               importLoaders: 2
             }
+          },
+
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
           }
         ]
       },
@@ -65,6 +72,13 @@ module.exports = merge(common, {
             options: {
               sourceMap: true,
               importLoaders: 2
+            }
+          },
+
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
             }
           },
 
