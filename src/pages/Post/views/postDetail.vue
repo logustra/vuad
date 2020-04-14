@@ -78,6 +78,7 @@ import { VCard } from 'molecules'
 
 export default class PostAuthor extends Vue {
   id = 0
+  title = 'Detail'
 
   @Getter('postDetail') 
   public postDetail
@@ -105,7 +106,7 @@ export default class PostAuthor extends Vue {
     
     await this.postDetailRequest(this.id)
     this.authorDetailRequest(this.postDetail.data.userId)
-    this.setTitle(this.postDetail.data.title)
+    this.setTitle(this.title)
     this.postCommentListRequest({ postId: this.id })
   }
 }

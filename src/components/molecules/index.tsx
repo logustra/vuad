@@ -1,3 +1,7 @@
+import VAlert from './VAlert/valert.vue'
 import VCard from './VCard/vcard.vue'
 
-export { VCard }
+export { 
+  VAlert,
+  VCard 
+}
