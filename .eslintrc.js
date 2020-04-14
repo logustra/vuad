@@ -15,7 +15,6 @@ module.exports = {
     }
   },
 
-  // required to lint *.vue files
   plugins: [
     '@typescript-eslint',
     'vue',
@@ -26,8 +25,7 @@ module.exports = {
     'plugin:vue/recommended',
     'eslint:recommended',
   ],
-  
-  // add your custom rules here
+
   rules: {
     // javascript
     'no-undef': 'off',
@@ -37,7 +35,6 @@ module.exports = {
     'no-whitespace-before-property': 'error',
     'camelcase': 'off',
     'no-useless-catch': 'off',
-    'indent': ['error', 2, { 'SwitchCase': 1 }],
     'semi': ['error', 'never'],
     'quotes': ['error', 'single'],
     'comma-dangle': ['error', 'never'],
@@ -47,6 +44,9 @@ module.exports = {
     'template-curly-spacing': ['error', 'never'],
     'space-in-parens': ['error', 'never'],
     'space-before-function-paren': ['error', 'always'],
+    'indent': ['error', 2, {
+      'SwitchCase': 1
+    }],
 
     // typescript
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -57,6 +57,11 @@ module.exports = {
       'vars': 'all',
       'args': 'after-used',
       'ignoreRestSiblings': false
+    }],
+
+    '@typescript-eslint/no-use-before-define': ['error', {
+      'functions': false,
+      'variables': false
     }],
 
     '@typescript-eslint/member-delimiter-style': ['error', {
@@ -79,10 +84,16 @@ module.exports = {
         }
       }
     }],
-    
+
     '@typescript-eslint/type-annotation-spacing': ['error', {
       'before': false,
-      'after': true
+      'after': true,
+      overrides: {
+        arrow: {
+          before: true,
+          after: true
+        }
+      }
     }],
 
     // vue
