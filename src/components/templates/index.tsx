@@ -1,7 +1,7 @@
-import Layout from './Layout/layout.vue'
-import Preloader from './Preloader/preloader'
+import VLayout from './VLayout/vlayout.vue'
+import VPreloader from './VPreloader/vpreloader'
 
 export { 
-  Layout,
-  Preloader
+  VLayout,
+  VPreloader
 }

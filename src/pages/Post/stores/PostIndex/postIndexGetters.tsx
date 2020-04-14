@@ -1,4 +1,4 @@
-import { PostIndexState } from '../../contracts/postIndexContracts'
+import { PostIndexState } from '../../typings/postIndexTypings'
 
 export default {
   authorList: (state: PostIndexState) => state.authorList,

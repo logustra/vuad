@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="v-card">
     <slot />
   </div>
 </template>
@@ -11,11 +11,11 @@ import {
 } from 'vue-property-decorator'
 
 @Component
-export default class Card extends Vue {}
+export default class VCard extends Vue {}
 </script>
 
 <style lang="scss">
-.card {
+.v-card {
   padding: rem(16px);
   border-radius: rem(6px);
   background-color: $white;

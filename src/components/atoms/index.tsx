@@ -1,3 +1,3 @@
-import Loading from './Loading/loading.vue'
+import VLoading from './VLoading/vloading.vue'
 
-export { Loading }
+export { VLoading }

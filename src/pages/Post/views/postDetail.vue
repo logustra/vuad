@@ -1,7 +1,7 @@
 <template>
   <div class="post-detail">
-    <Loading v-if="postDetail.isFetching" />
-    <Card v-else>
+    <VLoading v-if="postDetail.isFetching" />
+    <VCard v-else>
       <h2 class="title">
         {{ postDetail.data.title }}
       </h2>
@@ -22,13 +22,13 @@
       <div class="description">
         {{ postDetail.data.body }}
       </div>
-    </Card>
+    </VCard>
 
     <div class="comment">
       <h3>Comments</h3>
 
-      <Loading v-if="postCommentList.isFetching" />
-      <Card
+      <VLoading v-if="postCommentList.isFetching" />
+      <VCard
         v-else
         v-for="item in postCommentList.data"
         :key="`comment-${item.id}`"
@@ -40,7 +40,7 @@
         <div class="description">
           {{ item.body }}
         </div>
-      </Card>
+      </VCard>
     </div>
   </div>
 </template>
@@ -63,13 +63,13 @@ import { AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
 
 import { SET_TITLE } from '@/stores/commonTypes'
 
-import { Loading } from 'atoms'
-import { Card } from 'molecules'
+import { VLoading } from 'atoms'
+import { VCard } from 'molecules'
 
 @Component({
   components: {
-    Loading,
-    Card
+    VLoading,
+    VCard
   }
 })
 
@@ -108,7 +108,7 @@ export default class PostAuthor extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.post-detail .card {
+.post-detail .v-card {
   margin-bottom: rem(16px);
 
   a {

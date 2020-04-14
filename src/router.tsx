@@ -1,8 +1,8 @@
 import Router from 'vue-router'
 
-import { Preloader } from 'templates'
+import { VPreloader } from 'templates'
 
-const domainModuleFiles = require.context('./modules', true, /router.tsx/)
+const domainModuleFiles = require.context('./pages', true, /router.tsx/)
 const domainModules = domainModuleFiles.keys().reduce((carry: any, item: string) => {
   return [...carry, ...domainModuleFiles(item).default]
 }, [])
@@ -22,4 +22,4 @@ const routes = new Router({
   ]
 })
 
-export default Preloader(routes)
+export default VPreloader(routes)

@@ -1,4 +1,4 @@
-import { PostDetailState } from '../../contracts/postDetailContracts'
+import { PostDetailState } from '../../typings/postDetailTypings'
 
 export default {
   postDetail: (state: PostDetailState) => state.postDetail,

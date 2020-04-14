@@ -3,7 +3,7 @@ import {
   PostIndexState, 
   PostListModel, 
   AuthorListModel 
-} from '../../contracts/postIndexContracts'
+} from '../../typings/postIndexTypings'
 
 export default {
   [types.AUTHOR_LIST_SUCCESS]: (state: PostIndexState) => {

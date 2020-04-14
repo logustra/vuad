@@ -2,7 +2,7 @@ import { Store } from 'vuex'
 
 import Common from './stores'
 
-const domainModuleFiles = require.context('./modules', true, /store.tsx/)
+const domainModuleFiles = require.context('./pages', true, /store.tsx/)
 const domainModules = {}
 
 domainModuleFiles.keys().map((item: string) => {

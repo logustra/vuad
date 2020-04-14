@@ -1,7 +1,7 @@
 <template>
   <div class="post-author">
-    <Loading v-if="authorDetail.isFetching" />
-    <Card v-else>
+    <VLoading v-if="authorDetail.isFetching" />
+    <VCard v-else>
       <h2 class="title">
         {{ authorDetail.data.name }}
       </h2>
@@ -10,7 +10,7 @@
         Email: {{ authorDetail.data.email }} <br>
         Website: {{ authorDetail.data.website }}
       </div>
-    </Card>
+    </VCard>
 
     <h3>Posted Article</h3>
     <PostList 
@@ -39,14 +39,14 @@ import { SET_TITLE } from '@/stores/commonTypes'
 
 import { PostList } from '../components'
 
-import { Loading } from 'atoms'
-import { Card } from 'molecules'
+import { VLoading } from 'atoms'
+import { VCard } from 'molecules'
 
 @Component({
   components: {
     PostList,
-    Loading,
-    Card
+    VLoading,
+    VCard
   }
 })
 
@@ -78,7 +78,7 @@ export default class PostAuthor extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.post-author .card {
+.post-author .v-card {
   margin-bottom: rem(16px);
 }
 </style>

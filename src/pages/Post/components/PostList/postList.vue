@@ -1,12 +1,12 @@
 <template>
   <div class="post-list">
-    <Loading v-if="data.isFetching" />
+    <VLoading v-if="data.isFetching" />
     <div v-else>
       <div 
         v-for="item in data.data" 
         :key="`post-${item.id}`" 
       >
-        <Card>
+        <VCard>
           <RouterLink 
             :to="{
               name: 'post.detail',
@@ -37,7 +37,7 @@
           <div class="description">
             {{ item.body }}
           </div>
-        </Card>
+        </VCard>
       </div>
     </div>
   </div>
@@ -49,8 +49,8 @@ import {
   Component 
 } from 'vue-property-decorator'
 
-import { Loading } from 'atoms'
-import { Card } from 'molecules'
+import { VLoading } from 'atoms'
+import { VCard } from 'molecules'
 
 const Props = Vue.extend({
   props: {
@@ -70,8 +70,8 @@ const Props = Vue.extend({
 
 @Component({
   components: {
-    Loading,
-    Card
+    VLoading,
+    VCard
   }
 })
 
@@ -79,7 +79,7 @@ export default class PostList extends Props {}
 </script>
 
 <style lang="scss">
-.post-list .card {
+.post-list .v-card {
   margin-bottom: rem(16px)
 }
 </style>

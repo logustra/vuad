@@ -1,7 +1,7 @@
 <template>
-  <Layout>
+  <VLayout>
     <RouterView />
-  </Layout>
+  </VLayout>
 </template>
 
 <script lang="ts">
@@ -9,11 +9,11 @@ import {
   Vue, 
   Component 
 } from 'vue-property-decorator'
-import { Layout } from 'templates'
+import { VLayout } from 'templates'
 
 @Component({
   components: {
-    Layout
+    VLayout
   }
 })
 

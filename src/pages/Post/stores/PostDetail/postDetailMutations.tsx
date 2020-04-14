@@ -3,7 +3,7 @@ import {
   PostDetailState, 
   PostDetailModel, 
   PostCommentModel 
-} from '../../contracts/postDetailContracts'
+} from '../../typings/postDetailTypings'
 
 export default {
   [types.POST_DETAIL_REQUEST]: (state: PostDetailState) => {

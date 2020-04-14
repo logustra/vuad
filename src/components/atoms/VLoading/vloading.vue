@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="v-loading">
     loading...
   </div>
 </template>
@@ -11,5 +11,5 @@ import {
 } from 'vue-property-decorator'
 
 @Component
-export default class Loading extends Vue {}
+export default class VLoading extends Vue {}
 </script>

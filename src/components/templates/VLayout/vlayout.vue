@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <div class="layout-container">
+  <div class="v-layout">
+    <div class="container">
       <slot />
     </div>
   </div>
@@ -13,7 +13,7 @@ import {
 } from 'vue-property-decorator'
 
 @Component
-export default class Layout extends Vue {}
+export default class VLayout extends Vue {}
 </script>
 
 <style lang="scss">
@@ -21,7 +21,7 @@ export default class Layout extends Vue {}
   display: flex;
   justify-content: center;
 
-  &-container {
+  > .container {
     width: rem(480px);
     padding: rem(16px);
   }

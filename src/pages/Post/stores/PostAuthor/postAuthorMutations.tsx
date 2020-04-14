@@ -3,7 +3,7 @@ import {
   PostAuthorState, 
   PostListModel, 
   AuthorDetailModel 
-} from '../../contracts/postAuthorContracts'
+} from '../../typings/postAuthorTypings'
 
 export default {
   [types.AUTHOR_DETAIL_REQUEST]: (state: PostAuthorState) => {
