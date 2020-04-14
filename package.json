@@ -86,6 +86,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "helmet": "^3.22.0",
     "iltorb": "^2.4.5",
     "node-zopfli-es": "^1.0.3",
     "shrink-ray-current": "^4.0.0"
