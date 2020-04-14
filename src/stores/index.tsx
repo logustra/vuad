@@ -1,5 +1,9 @@
-import Common from './Common'
+import state from './commonState'
+import mutations from './commonMutations'
+import actions from './commonActions'
 
 export default {
-  Common
+  state,
+  mutations,
+  actions
 }

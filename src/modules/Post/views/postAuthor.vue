@@ -35,7 +35,7 @@ import {
   AUTHOR_DETAIL_REQUEST 
 } from '../stores/PostAuthor/postAuthorTypes'
 
-import { SET_TITLE } from '@/stores/Common/commonTypes'
+import { SET_TITLE } from '@/stores/commonTypes'
 
 import { PostList } from '../components'
 
