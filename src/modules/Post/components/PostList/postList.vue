@@ -50,7 +50,7 @@ import {
 } from 'vue-property-decorator'
 
 import { Loading } from 'atoms'
-import { Card } from 'templates'
+import { Card } from 'molecules'
 
 const Props = Vue.extend({
   props: {

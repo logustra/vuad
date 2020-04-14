@@ -40,7 +40,7 @@ import { SET_TITLE } from '@/stores/Common/commonTypes'
 import { PostList } from '../components'
 
 import { Loading } from 'atoms'
-import { Card } from 'templates'
+import { Card } from 'molecules'
 
 @Component({
   components: {

@@ -64,7 +64,7 @@ import { AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 
 import { Loading } from 'atoms'
-import { Card } from 'templates'
+import { Card } from 'molecules'
 
 @Component({
   components: {
