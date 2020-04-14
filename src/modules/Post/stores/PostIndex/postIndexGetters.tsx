@@ -1,6 +1,6 @@
-import { PostListState } from '../../contracts/postListContracts'
+import { PostIndexState } from '../../contracts/postIndexContracts'
 
 export default {
-  authorList: (state: PostListState) => state.authorList,
-  postList: (state: PostListState) => state.postList
+  authorList: (state: PostIndexState) => state.authorList,
+  postList: (state: PostIndexState) => state.postList
 }

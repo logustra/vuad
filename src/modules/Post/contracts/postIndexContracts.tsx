@@ -1,4 +1,4 @@
-export interface PostListState {
+export interface PostIndexState {
   postList: {
     data: PostListModel[],
     isFetching: boolean,
