@@ -17,7 +17,7 @@ export default class VLayout extends Vue {}
 </script>
 
 <style lang="scss">
-.layout {
+.v-layout {
   display: flex;
   justify-content: center;
 

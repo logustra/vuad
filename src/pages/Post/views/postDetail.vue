@@ -1,5 +1,5 @@
 <template>
-  <div class="post-detail">
+  <div class="v-post-detail">
     <VLoading v-if="postDetail.isFetching" />
     <VCard v-else>
       <h2 class="title">
@@ -8,6 +8,7 @@
       <div>
         Written by 
         <RouterLink 
+          class="link"
           :to="{ 
             name: 'post.author', 
             params: { 
@@ -108,11 +109,10 @@ export default class PostAuthor extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.post-detail .v-card {
-  margin-bottom: rem(16px);
-
-  a {
-    text-decoration: none;
+.v-post-detail {
+  // stylelint-disable-next-line
+  > .v-card {
+    margin-bottom: rem(16px)
   }
 }
 </style>

@@ -20,22 +20,21 @@ export default class VCard extends Vue {}
   border-radius: rem(6px);
   background-color: $white;
 
-  > a {
+  > .title {
     color: $black;
     text-decoration: none;
-
-    ~ div > a {
-      text-decoration: none;
-    }
-  }
-
-  .title {
     margin-top: 0;
     margin-bottom: rem(2px);
+    font-size: rem(16px);
     font-weight: 700;
   }
 
-  .description {
+  // stylelint-disable-next-line
+  .link {
+    text-decoration: none;
+  }
+
+  > .description {
     margin-top: rem(12px);
   }
 }

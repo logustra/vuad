@@ -1,5 +1,5 @@
 <template>
-  <div class="post-list">
+  <div class="v-post-list">
     <VLoading v-if="data.isFetching" />
     <div v-else>
       <div 
@@ -8,6 +8,7 @@
       >
         <VCard>
           <RouterLink 
+            class="title"
             :to="{
               name: 'post.detail',
               params: {
@@ -15,14 +16,13 @@
               }
             }"
           >
-            <h3 class="title">
-              {{ item.title }}
-            </h3>
+            {{ item.title }}
           </RouterLink>
 
           <div v-if="withAuthor && item.author">
             Written by 
             <RouterLink 
+              class="link"
               :to="{ 
                 name: 'post.author', 
                 params: { 
@@ -79,7 +79,10 @@ export default class PostList extends Props {}
 </script>
 
 <style lang="scss">
-.post-list .v-card {
-  margin-bottom: rem(16px)
+.v-post-list {
+  // stylelint-disable-next-line
+  > .v-card {
+    margin-bottom: rem(16px)
+  }
 }
 </style>

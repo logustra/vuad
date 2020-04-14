@@ -78,7 +78,10 @@ export default class PostAuthor extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.post-author .v-card {
-  margin-bottom: rem(16px);
+.v-post-author {
+  // stylelint-disable-next-line
+  > .v-card {
+    margin-bottom: rem(16px)
+  }
 }
 </style>
