@@ -1,7 +1,7 @@
 {
   "name": "vuad",
   "version": "1.0.0",
-  "description": "a Blog build with Vue, Typescript, Atomic Design & DDD",
+  "description": "A highly scalable vue boilerplate",
   "main": "index.js",
   "keywords": [
     "vue",
