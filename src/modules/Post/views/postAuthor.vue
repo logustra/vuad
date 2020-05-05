@@ -1,5 +1,5 @@
 <template>
-  <div class="post-author">
+  <div>
     <VLoading v-if="authorDetail.isFetching" />
     <VCard v-else>
       <h2 class="title">

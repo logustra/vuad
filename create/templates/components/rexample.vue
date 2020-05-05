@@ -25,5 +25,7 @@ export default class VExample extends Props {}
 </script>
 
 <style lang="scss">
-.r-example {}
+.r-example {
+  // your style
+}
 </style>

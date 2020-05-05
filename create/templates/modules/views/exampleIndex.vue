@@ -1,5 +1,5 @@
 <template>
-  <div class="r-example-index">
+  <div>
     Bismillah, Hello World!
   </div>
 </template>
@@ -41,5 +41,5 @@ export default class PostIndex extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.r-example-index {}
+  // your style
 </style>

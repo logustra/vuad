@@ -1,5 +1,5 @@
 <template>
-  <div class="v-post-detail">
+  <div>
     <VLoading v-if="postDetail.isFetching" />
     <VCard v-else>
       <h2 class="title">
