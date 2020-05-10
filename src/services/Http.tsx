@@ -7,13 +7,6 @@ export default class Http {
     this.axios = axios.create(axiosConfig)
   }
 
-  /**
-   * Perform GET request.
-   *
-   * @param  {string} url
-   * @param  {object} params
-   * @param  {string} responseType
-   */
   public get (url: string, params?: {}, responseType?: string) {
     try {
       const config: any = {
@@ -32,13 +25,7 @@ export default class Http {
     }
   }
 
-  /**
-   * Perform POST request.
-   *
-   * @param  {string} url
-   * @param  {object} data
-   */
-  public post (url: string, data: object) {
+  public post (url: string, data: {}) {
     try {
       return this.axios.request({
         method: 'post',
@@ -50,13 +37,7 @@ export default class Http {
     }
   }
 
-  /**
-   * Perform PUT request.
-   *
-   * @param  {string} url
-   * @param  {object} data
-   */
-  public put (url: string, data: object) {
+  public put (url: string, data: {}) {
     try {
       return this.axios.request({
         method: 'put',
@@ -68,13 +49,7 @@ export default class Http {
     }
   }
 
-  /**
-   * Perform PATCH request.
-   *
-   * @param  {string} url
-   * @param  {object} data
-   */
-  public patch (url: string, data: object) {
+  public patch (url: string, data: {}) {
     try {
       return this.axios.request({
         method: 'patch',
@@ -86,11 +61,6 @@ export default class Http {
     }
   }
 
-  /**
-   * Perform DELETE request.
-   *
-   * @param  {string} url
-   */
   public delete (url: string) {
     try {
       return this.axios.request({

@@ -1,4 +1,4 @@
-import { CommonState } from '@/typings/commonTypings'
+import { CommonState } from 'typings/commonTypings'
 
 export default {
   isOffline: (state: CommonState) => state.isOffline

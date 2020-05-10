@@ -20,7 +20,7 @@ import {
   Action 
 } from 'vuex-class'
 
-import { SET_OFFLINE } from '@/stores/commonTypes'
+import { SET_OFFLINE } from 'stores/Common/commonTypes'
 
 import { VAlert } from 'molecules'
 

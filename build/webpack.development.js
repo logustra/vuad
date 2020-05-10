@@ -95,7 +95,7 @@ module.exports = merge(common, {
               sourceMap: true,
               outputStyle: 'expanded',
               data: `
-                @import '@/styles/index.scss';
+                @import 'styles/index.scss';
               `
             }
           }

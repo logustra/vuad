@@ -4,11 +4,10 @@
       Vuad
     </h2>
     
-    <VLoading v-if="postList.isFetching" />
     <PostList 
-      v-else
       :with-author="true"
-      :data="postList"
+      :users="users"
+      :data="posts"
     />
   </div>
 </template>
@@ -23,10 +22,9 @@ import {
   Action 
 } from 'vuex-class'
 
-import { 
-  AUTHOR_LIST_REQUEST, 
-  POST_LIST_REQUEST 
-} from '../stores/PostIndex/postIndexTypes'
+import { POSTS_REQUEST } from '../stores/Posts/postsTypes'
+
+import { USERS_REQUEST } from 'stores/Users/usersTypes'
 
 import { PostList } from '../components'
 
@@ -40,21 +38,21 @@ import { VLoading } from 'atoms'
 })
 
 export default class PostIndex extends Vue {
-  @Getter('authorList')
-  public authorList
+  @Getter('users')
+  public users
 
-  @Getter('postList')
-  public postList
+  @Getter('posts')
+  public posts
 
-  @Action(AUTHOR_LIST_REQUEST)
-  public authorListRequest
+  @Action(USERS_REQUEST)
+  public usersRequest
 
-  @Action(POST_LIST_REQUEST)
-  public postListRequest
+  @Action(POSTS_REQUEST)
+  public postsRequest
 
   async mounted () {
-    this.authorListRequest()
-    await this.postListRequest()
+    this.usersRequest()
+    await this.postsRequest()
   }
 }
 </script>

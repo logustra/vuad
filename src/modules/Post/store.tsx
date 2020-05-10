@@ -1,9 +1,11 @@
-import PostIndex from './stores/PostIndex'
-import PostDetail from './stores/PostDetail'
-import PostAuthor from './stores/PostAuthor'
+import Posts from './stores/Posts'
+import Post from './stores/Post'
+import Comments from './stores/Comments'
+import User from './stores/User'
 
 export {
-  PostIndex,
-  PostDetail,
-  PostAuthor
+  Posts,
+  Post,
+  Comments,
+  User
 }

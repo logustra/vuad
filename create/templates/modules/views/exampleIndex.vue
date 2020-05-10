@@ -14,22 +14,19 @@ import {
   Action 
 } from 'vuex-class'
 
-import { EXAMPLE_REQUEST } from '../stores/exampleIndexTypes'
-
-import { PostList } from '../components'
+import { EXAMPLE_REQUEST } from '../stores/Example/exampleTypes'
 
 import { VLoading } from 'atoms'
 
 @Component({
   components: {
-    PostList,
     VLoading
   }
 })
 
 export default class PostIndex extends Vue {
-  @Getter('exampleState')
-  public exampleState
+  @Getter('example')
+  public example
 
   @Action(EXAMPLE_REQUEST)
   public exampleRequest

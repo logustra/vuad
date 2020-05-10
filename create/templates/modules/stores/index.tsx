@@ -1,7 +1,7 @@
-import state from './exampleIndexState'
-import getters from './exampleIndexGetters'
-import mutations from './exampleIndexMutations'
-import actions from './exampleIndexActions'
+import state from './exampleState'
+import getters from './exampleGetters'
+import mutations from './exampleMutations'
+import actions from './exampleActions'
 
 export default {
   state,

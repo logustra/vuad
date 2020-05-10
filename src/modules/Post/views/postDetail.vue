@@ -1,28 +1,28 @@
 <template>
   <div>
-    <VLoading v-if="postDetail.isFetching" />
+    <VLoading v-if="post.isFetching" />
     <VCard v-else>
       <h2 class="title">
-        {{ postDetail.data.title }}
+        {{ post.data.title }}
       </h2>
 
-      <div>
+      <div v-if="post.data.userId && users.data.length">
         Written by 
         <RouterLink 
           class="link"
           :to="{ 
             name: 'post.author', 
             params: { 
-              id: postDetail.data.userId 
+              id: post.data.userId 
             }
           }"
         >
-          {{ authorDetail.data.name }}
+          {{ handleUser(post.data.userId).name }}
         </RouterLink>
       </div>
 
       <div class="description">
-        {{ postDetail.data.body }}
+        {{ post.data.body }}
       </div>
     </VCard>
 
@@ -30,10 +30,10 @@
       Comments
     </h3>
 
-    <VLoading v-if="postCommentList.isFetching" />
+    <VLoading v-if="comments.isFetching" />
     <VCard
       v-else
-      v-for="item in postCommentList.data"
+      v-for="item in comments.data"
       :key="`comment-${item.id}`"
       class="mb-4"
     >
@@ -58,13 +58,11 @@ import {
   Action 
 } from 'vuex-class'
 
-import { 
-  POST_DETAIL_REQUEST, 
-  POST_COMMENT_LIST_REQUEST 
-} from '../stores/PostDetail/postDetailTypes'
-import { AUTHOR_DETAIL_REQUEST } from '../stores/PostAuthor/postAuthorTypes'
+import { POST_REQUEST } from '../stores/Post/postTypes'
+import { COMMENTS_REQUEST } from '../stores/Comments/commentsTypes'
 
-import { SET_TITLE } from '@/stores/commonTypes'
+import { SET_TITLE } from 'stores/Common/commonTypes'
+import { USERS_REQUEST } from 'stores/Users/usersTypes'
 
 import { VLoading } from 'atoms'
 import { VCard } from 'molecules'
@@ -80,34 +78,38 @@ export default class PostAuthor extends Vue {
   id = 0
   title = 'Detail'
 
-  @Getter('postDetail') 
-  public postDetail
+  @Getter('users') 
+  public users
 
-  @Getter('authorDetail') 
-  public authorDetail
+  @Getter('post') 
+  public post
 
-  @Getter('postCommentList') 
-  public postCommentList
-
-  @Action(POST_DETAIL_REQUEST)
-  public postDetailRequest
+  @Getter('comments') 
+  public comments
 
   @Action(SET_TITLE)
   public setTitle
 
-  @Action(AUTHOR_DETAIL_REQUEST)
-  public authorDetailRequest
+  @Action(USERS_REQUEST)
+  public usersRequest
 
-  @Action(POST_COMMENT_LIST_REQUEST)
-  public postCommentListRequest
+  @Action(POST_REQUEST)
+  public postRequest
+
+  @Action(COMMENTS_REQUEST)
+  public commentsRequest
+
+  public handleUser (userId: number) {
+    return this.users.data.find(item => item.id === userId)
+  }
 
   async mounted () {
-    this.id = parseInt((this.$route.params.id as string))
+    this.id = parseInt(this.$route.params.id)
     
-    await this.postDetailRequest(this.id)
-    this.authorDetailRequest(this.postDetail.data.userId)
+    this.usersRequest()
+    await this.postRequest(this.id)
     this.setTitle(this.title)
-    this.postCommentListRequest({ postId: this.id })
+    this.commentsRequest({ postId: this.id })
   }
 }
 </script>

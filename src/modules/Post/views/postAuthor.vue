@@ -1,16 +1,16 @@
 <template>
   <div>
-    <VLoading v-if="authorDetail.isFetching" />
+    <VLoading v-if="user.isFetching" />
     <VCard v-else>
       <h2 class="title">
-        {{ authorDetail.data.name }}
+        {{ user.data.name }}
       </h2>
 
       <VDivider />
 
       <div>
-        Email: {{ authorDetail.data.email }} <br>
-        Website: {{ authorDetail.data.website }}
+        Email: {{ user.data.email }} <br>
+        Website: {{ user.data.website }}
       </div>
     </VCard>
 
@@ -20,7 +20,7 @@
 
     <PostList 
       :with-author="false"
-      :data="postAuthor"
+      :data="posts"
     />
   </div>
 </template>
@@ -35,12 +35,10 @@ import {
   Action 
 } from 'vuex-class'
 
-import { 
-  POST_AUTHOR_REQUEST, 
-  AUTHOR_DETAIL_REQUEST 
-} from '../stores/PostAuthor/postAuthorTypes'
+import { USER_REQUEST } from '../stores/User/userTypes'
+import { POSTS_REQUEST } from '../stores/Posts/postsTypes'
 
-import { SET_TITLE } from '@/stores/commonTypes'
+import { SET_TITLE } from 'stores/Common/commonTypes'
 
 import { PostList } from '../components'
 
@@ -63,27 +61,27 @@ export default class PostAuthor extends Vue {
   id = 0
   title = 'Author'
 
-  @Getter('authorDetail')
-  public authorDetail
+  @Getter('user')
+  public user
 
-  @Getter('postAuthor')
-  public postAuthor
+  @Getter('posts')
+  public posts
 
-  @Action(AUTHOR_DETAIL_REQUEST)
-  public authorDetailRequest
-  
   @Action(SET_TITLE)
   public setTitle
 
-  @Action(POST_AUTHOR_REQUEST)
-  public postAuthorRequest
+  @Action(USER_REQUEST)
+  public userRequest
+
+  @Action(POSTS_REQUEST)
+  public postsRequest
 
   async mounted () {
-    this.id = parseInt((this.$route.params.id as string))
+    this.id = parseInt(this.$route.params.id)
     
-    await this.authorDetailRequest(this.id)
+    await this.userRequest(this.id)
     this.setTitle(this.title)
-    this.postAuthorRequest({ userId: this.id })
+    this.postsRequest({ userId: this.id })
   }
 }
 </script>
