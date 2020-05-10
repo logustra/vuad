@@ -1,11 +1,5 @@
-import state from './commonState'
-import getters from './commonGetters'
-import mutations from './commonMutations'
-import actions from './commonActions'
+import Common from './Common'
 
 export default {
-  state,
-  getters,
-  mutations,
-  actions
+  Common
 }

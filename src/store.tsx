@@ -1,19 +1,18 @@
 import { Store } from 'vuex'
+import globalStores from './stores'
 
-import Common from './stores'
+const domainStores = {}
+const domainStoreFiles = require.context('./modules', true, /store.tsx/)
 
-const domainModuleFiles = require.context('./modules', true, /store.tsx/)
-const domainModules = {}
-
-domainModuleFiles.keys().map((item: string) => {
-  for (const key in domainModuleFiles(item)) {
-    domainModules[key] = domainModuleFiles(item)[key]
+domainStoreFiles.keys().map((item: string) => {
+  for (const key in domainStoreFiles(item)) {
+    globalStores[key] = domainStoreFiles(item)[key]
   }
 })
 
 export default new Store({
   modules: {
-    Common,
-    ...domainModules
+    ...globalStores,
+    ...domainStores
   }
 })
