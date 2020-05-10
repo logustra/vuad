@@ -1,25 +1,13 @@
 import Router from 'vue-router'
 
+import routes from './routes'
+
 import { VPreloader } from 'templates'
 
-const domainModuleFiles = require.context('./modules', true, /router.tsx/)
-const domainModules = domainModuleFiles.keys().reduce((carry: any, item: string) => {
-  return [...carry, ...domainModuleFiles(item).default]
-}, [])
-
-const routes = new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-
-  routes: [
-    {
-      path: '*',
-      name: 'notFound',
-      component: () => import('./views/notFound.vue')
-    },
-
-    ...domainModules
-  ]
+  routes
 })
 
-export default VPreloader(routes)
+export default VPreloader(router)
