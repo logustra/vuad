@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
@@ -9,6 +10,13 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    path: path.resolve('dist'),
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].chunk.js',
+    publicPath: '/'
+  },
+
   module: {
     rules: [
       {
@@ -104,6 +112,12 @@ module.exports = merge(common, {
       minimize: true
     }),
 
+    new webpack.HashedModuleIdsPlugin({
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 7
+    }),
+
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer'
     }),
@@ -114,7 +128,16 @@ module.exports = merge(common, {
 
   optimization: {
     runtimeChunk: true,
+    removeAvailableModules: true,
+    removeEmptyChunks: true,
+    mergeDuplicateChunks: true,
+    flagIncludedChunks: true,
+    occurrenceOrder: true,
+    providedExports: true,
+    usedExports: true,
+    sideEffects: true,
     concatenateModules: true,
+    noEmitOnErrors: true,
     minimize: true,
     minimizer: [
       new TerserPlugin({

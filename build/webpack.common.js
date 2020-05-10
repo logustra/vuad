@@ -1,16 +1,9 @@
-const webpack = require('webpack')
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/main.tsx',
-  output: {
-    path: path.resolve('dist'),
-    filename: '[name].[hash].js',
-    publicPath: '/'
-  },
-  
   module: {
     rules: [
       {
@@ -23,16 +16,11 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new VueLoaderPlugin(),
     new Dotenv({
       path: './.env'
-    }),
-    
-    new webpack.HashedModuleIdsPlugin({
-      hashFunction: 'sha256',
-      hashDigest: 'hex',
-      hashDigestLength: 7
     })
   ],
 

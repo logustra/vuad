@@ -6,6 +6,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
+  output: {
+    path: path.resolve('dist'),
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    publicPath: '/'
+  },
+
   devServer: {
     contentBase: path.resolve(__dirname, '../dist'),
     port: 9900,
