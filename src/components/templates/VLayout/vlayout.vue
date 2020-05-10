@@ -1,8 +1,11 @@
 <template>
   <div class="v-layout">
-    <VAlert v-if="isOffline">
+    <div 
+      v-if="isOffline"
+      class="offline"
+    >
       You're Offline
-    </VAlert>
+    </div>
 
     <div class="container">
       <slot />
@@ -22,14 +25,7 @@ import {
 
 import { SET_OFFLINE } from 'stores/Common/commonTypes'
 
-import { VAlert } from 'molecules'
-
-@Component({
-  components: {
-    VAlert
-  }
-})
-
+@Component
 export default class VLayout extends Vue {
   @Getter('isOffline') 
   public isOffline
@@ -55,12 +51,25 @@ export default class VLayout extends Vue {
 
 <style lang="scss">
 .v-layout {
-  display: flex;
-  justify-content: center;
+  @apply
+    flex
+    justify-center;
+
+  > .offline {
+    @apply 
+      fixed 
+      bg-red-500 
+      text-white 
+      text-center 
+      p-1 
+      w-full 
+      left-0 
+      z-20;
+  }
 
   > .container {
+    @apply p-4;
     width: rem(480px);
-    padding: rem(16px);
   }
 }
 </style>
