@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue'
 
-import './plugins/vuex'
-import './plugins/vue-router'
+import './libs/vuex'
+import './libs/vue-router'
 
 import store from './store'
 import router from './router'

@@ -33,7 +33,7 @@ export default class VCard extends Vue {}
   // stylelint-disable-next-line
   .link {
     @apply
-      text-blue-500
+      text-blue-700
       no-underline;
   }
 
