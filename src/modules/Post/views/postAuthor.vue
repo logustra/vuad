@@ -38,7 +38,7 @@ import {
 import { USER_REQUEST } from '../stores/User/userTypes'
 import { POSTS_REQUEST } from '../stores/Posts/postsTypes'
 
-import { SET_TITLE } from 'stores/Common/commonTypes'
+import { SET_TITLE } from '@/stores/Common/commonTypes'
 
 import { PostList } from '../components'
 

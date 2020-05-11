@@ -24,7 +24,7 @@ import {
 
 import { POSTS_REQUEST } from '../stores/Posts/postsTypes'
 
-import { USERS_REQUEST } from 'stores/Users/usersTypes'
+import { USERS_REQUEST } from '@/stores/Users/usersTypes'
 
 import { PostList } from '../components'
 

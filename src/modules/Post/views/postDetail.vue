@@ -61,8 +61,8 @@ import {
 import { POST_REQUEST } from '../stores/Post/postTypes'
 import { COMMENTS_REQUEST } from '../stores/Comments/commentsTypes'
 
-import { SET_TITLE } from 'stores/Common/commonTypes'
-import { USERS_REQUEST } from 'stores/Users/usersTypes'
+import { SET_TITLE } from '@/stores/Common/commonTypes'
+import { USERS_REQUEST } from '@/stores/Users/usersTypes'
 
 import { VLoading } from 'atoms'
 import { VCard } from 'molecules'

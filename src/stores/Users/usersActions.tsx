@@ -1,6 +1,6 @@
 import * as types from './usersTypes'
-import { API_USERS } from 'constants'
-import { httpService } from 'services'
+import { API_USERS } from '@/constants'
+import { httpService } from '@/services'
 
 export default {
   [types.USERS_REQUEST]: async ({ commit }: { commit: Function }, response: string) => {

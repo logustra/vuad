@@ -2,7 +2,7 @@ import * as types from './usersTypes'
 import { 
   UsersState, 
   UsersDataModel
-} from 'typings/usersTypings'
+} from '@/typings/usersTypings'
 
 export default {
   [types.USERS_REQUEST]: (state: UsersState) => {
