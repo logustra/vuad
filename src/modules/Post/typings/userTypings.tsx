@@ -1,7 +1,7 @@
 export interface UserState {
-  data: UserDataModel,
+  data: UserDataModel | {},
   isFetching: boolean,
-  isError: {}
+  isError: boolean | Error
 }
 
 export interface UserDataModel {

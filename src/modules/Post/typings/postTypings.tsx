@@ -1,7 +1,7 @@
 export interface PostState {
-  data: PostDataModel[],
+  data: PostDataModel | {},
   isFetching: boolean,
-  isError: Error
+  isError: boolean | Error
 }
 
 export interface PostDataModel {

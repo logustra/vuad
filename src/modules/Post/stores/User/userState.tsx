@@ -1,9 +1,5 @@
 export default () => ({
-  data: {
-    name: '',
-    email: '',
-    website: ''
-  },
+  data: {},
   isFetching: false,
-  isError: {}
+  isError: false
 })

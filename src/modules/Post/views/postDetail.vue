@@ -1,12 +1,13 @@
 <template>
   <div>
     <VLoading v-if="post.isFetching" />
-    <VCard v-else>
+    <VError v-if="post.isError" />
+    <VCard v-if="Object.keys(post.data).length !== 0">
       <h2 class="title">
         {{ post.data.title }}
       </h2>
 
-      <div v-if="post.data.userId && users.data.length">
+      <div v-if="post.data.userId && users.data.length !== 0">
         Written by 
         <RouterLink 
           class="link"
@@ -31,20 +32,22 @@
     </h3>
 
     <VLoading v-if="comments.isFetching" />
-    <VCard
-      v-else
-      v-for="item in comments.data"
-      :key="`comment-${item.id}`"
-      class="mb-4"
-    >
-      <h3 class="title">
-        {{ item.name }}
-      </h3>
+    <VError v-if="comments.isError" />
+    <div v-if="comments.data.length !== 0">
+      <VCard
+        v-for="item in comments.data"
+        :key="`comment-${item.id}`"
+        class="mb-4"
+      >
+        <h3 class="title">
+          {{ item.name }}
+        </h3>
 
-      <div class="description">
-        {{ item.body }}
-      </div>
-    </VCard>
+        <div class="description">
+          {{ item.body }}
+        </div>
+      </VCard>
+    </div>
   </div>
 </template>
 
@@ -64,11 +67,15 @@ import { COMMENTS_REQUEST } from '../stores/Comments/commentsTypes'
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 import { USERS_REQUEST } from '@/stores/Users/usersTypes'
 
-import { VLoading } from 'atoms'
+import { 
+  VError,
+  VLoading 
+} from 'atoms'
 import { VCard } from 'molecules'
 
 @Component({
   components: {
+    VError,
     VLoading,
     VCard
   }
@@ -78,23 +85,23 @@ export default class PostAuthor extends Vue {
   id = 0
   title = 'Detail'
 
-  @Getter('users') 
-  public users
-
-  @Getter('post') 
-  public post
-
-  @Getter('comments') 
-  public comments
-
   @Action(SET_TITLE)
   public setTitle
+
+  @Getter('users') 
+  public users
 
   @Action(USERS_REQUEST)
   public usersRequest
 
+  @Getter('post') 
+  public post
+
   @Action(POST_REQUEST)
   public postRequest
+
+  @Getter('comments') 
+  public comments
 
   @Action(COMMENTS_REQUEST)
   public commentsRequest
@@ -103,13 +110,17 @@ export default class PostAuthor extends Vue {
     return this.users.data.find(item => item.id === userId)
   }
 
-  async mounted () {
+  mounted () {
     this.id = parseInt(this.$route.params.id)
     
-    this.usersRequest()
-    await this.postRequest(this.id)
     this.setTitle(this.title)
+    this.usersRequest()
+    this.postRequest(this.id)
     this.commentsRequest({ postId: this.id })
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  // your style
+</style>

@@ -15,7 +15,7 @@ export default {
   },
 
   [types.POST_ERROR]: (state: PostState, response: Error) => {
-    state.data = []
+    state.data = {}
     state.isFetching = false,
     state.isError = response
   }

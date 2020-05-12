@@ -1,7 +1,7 @@
 export interface ExampleState {
   data: ExampleDataModel[],
   isFetching: boolean,
-  isError: boolean
+  isError: boolean | Error
 } 
 
 export interface ExampleDataModel {

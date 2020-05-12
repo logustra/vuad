@@ -41,18 +41,22 @@ export default class PostIndex extends Vue {
   @Getter('users')
   public users
 
-  @Getter('posts')
-  public posts
-
   @Action(USERS_REQUEST)
   public usersRequest
+
+  @Getter('posts')
+  public posts
 
   @Action(POSTS_REQUEST)
   public postsRequest
 
-  async mounted () {
+  mounted () {
     this.usersRequest()
-    await this.postsRequest()
+    this.postsRequest()
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  // your style
+</style>

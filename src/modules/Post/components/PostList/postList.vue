@@ -1,7 +1,8 @@
 <template>
   <div class="v-post-list">
     <VLoading v-if="data.isFetching" />
-    <div v-else>
+    <VError v-if="data.isError" />
+    <div v-if="data.data.length !== 0">
       <div 
         v-for="item in data.data" 
         :key="`post-${item.id}`" 
@@ -19,7 +20,7 @@
             {{ item.title }}
           </RouterLink>
 
-          <div v-if="withAuthor && users && users.data">
+          <div v-if="withAuthor && users && users.data.length !== 0">
             Written by 
             <RouterLink 
               class="link"
@@ -49,7 +50,10 @@ import {
   Component 
 } from 'vue-property-decorator'
 
-import { VLoading } from 'atoms'
+import { 
+  VError,
+  VLoading 
+} from 'atoms'
 import { VCard } from 'molecules'
 
 const Props = Vue.extend({
@@ -76,6 +80,7 @@ const Props = Vue.extend({
 
 @Component({
   components: {
+    VError,
     VLoading,
     VCard
   }

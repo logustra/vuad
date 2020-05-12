@@ -1,7 +1,7 @@
 export interface CommentsState {
   data: CommentsDataModel[],
   isFetching: boolean,
-  isError: Error
+  isError: boolean | Error
 }
 
 export interface CommentsDataModel {

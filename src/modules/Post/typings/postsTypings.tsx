@@ -1,7 +1,7 @@
 export interface PostsState {
   data: PostsDataModel[],
   isFetching: boolean,
-  isError: Error
+  isError: boolean | Error
 }
 
 export interface PostsDataModel {

@@ -1,7 +1,8 @@
 <template>
   <div>
     <VLoading v-if="user.isFetching" />
-    <VCard v-else>
+    <VError v-if="user.isError" />
+    <VCard v-if="Object.keys(user.data).length !== 0">
       <h2 class="title">
         {{ user.data.name }}
       </h2>
@@ -44,6 +45,7 @@ import { PostList } from '../components'
 
 import { 
   VDivider,
+  VError,
   VLoading 
 } from 'atoms'
 import { VCard } from 'molecules'
@@ -51,8 +53,9 @@ import { VCard } from 'molecules'
 @Component({
   components: {
     PostList,
-    VLoading,
     VDivider,
+    VError,
+    VLoading,
     VCard
   }
 })
@@ -61,27 +64,31 @@ export default class PostAuthor extends Vue {
   id = 0
   title = 'Author'
 
-  @Getter('user')
-  public user
-
-  @Getter('posts')
-  public posts
-
   @Action(SET_TITLE)
   public setTitle
+
+  @Getter('user')
+  public user
 
   @Action(USER_REQUEST)
   public userRequest
 
+  @Getter('posts')
+  public posts
+
   @Action(POSTS_REQUEST)
   public postsRequest
 
-  async mounted () {
+  mounted () {
     this.id = parseInt(this.$route.params.id)
     
-    await this.userRequest(this.id)
     this.setTitle(this.title)
+    this.userRequest(this.id)
     this.postsRequest({ userId: this.id })
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  // your style
+</style>

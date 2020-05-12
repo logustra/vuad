@@ -1,5 +1,5 @@
 export default () => ({
   data: [],
   isFetching: false,
-  isError: {}
+  isError: false
 })

@@ -15,11 +15,7 @@ export default {
   },
 
   [types.USER_ERROR]: (state: UserState, response: Error) => {
-    state.data = {
-      name: '',
-      email: '',
-      website: ''
-    }
+    state.data = {}
     state.isFetching = false,
     state.isError = response
   }
