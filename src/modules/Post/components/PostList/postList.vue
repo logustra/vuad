@@ -19,7 +19,7 @@
             {{ item.title }}
           </RouterLink>
 
-          <div v-if="withAuthor && users.data && users.data.length">
+          <div v-if="withAuthor && users && users.data">
             Written by 
             <RouterLink 
               class="link"
@@ -83,7 +83,7 @@ const Props = Vue.extend({
 
 export default class PostList extends Props {
   public handleUser (userId: number) {
-    return this.users.data.find(item => item.id === userId)
+    if (this.users) return this.users.data.find(item => item.id === userId)
   }
 }
 </script>
