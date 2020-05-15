@@ -16,7 +16,8 @@ let name = 'example'
 
 const templates = {
   components: {
-    default: './create/templates/components/rexample.vue'
+    default: './create/templates/components/vexample.vue',
+    stories: './create/templates/components/vexample.stories.tsx'
   },
 
   modules: {
@@ -99,6 +100,21 @@ const createComponent = {
     if (!checkPath(path)) {
       shell.touch(path)
       shell.exec(`cat ${templates.components.default} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
+  stories: folderName => {
+    const folder = `${createFolder('components', folderName)}/`
+    const file = `v${camelCase(name)}.stories.tsx`
+    const path = folder + file
+    
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.components.stories} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -245,24 +261,28 @@ const actions = {
     name = componentName
 
     createComponent.default('atoms')
+    createComponent.stories('atoms')
   },
 
   'molecule': componentName => {
     name = componentName
 
     createComponent.default('molecules')
+    createComponent.stories('molecules')
   },
 
   'organism': componentName => {
     name = componentName
 
     createComponent.default('organisms')
+    createComponent.stories('organisms')
   },
 
   'template': componentName => {
     name = componentName
 
     createComponent.default('templates')
+    createComponent.stories('templates')
   },
 
   'module': moduleName => {

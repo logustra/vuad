@@ -12,7 +12,8 @@
     "atomic-design-example",
     "ddd-example",
     "boilerplate",
-    "vue-boilerplate"
+    "vue-boilerplate",
+    "storybook"
   ],
   "repository": {
     "type": "git",
@@ -31,7 +32,8 @@
     "linter": "eslint -c .eslintrc.js --ext .js,.vue,.ts,.tsx, src",
     "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts,.tsx, src",
     "lint": "yarn linter && yarn stylelint",
-    "lint:fix": "yarn linter:fix && yarn stylelint:fix"
+    "lint:fix": "yarn linter:fix && yarn stylelint:fix",
+    "story": "start-storybook"
   },
   "config": {
     "commitizen": {
@@ -50,6 +52,9 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@fullhuman/postcss-purgecss": "^2.1.2",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/vue": "^5.3.18",
     "@types/node": "^11.12.0",
     "@types/nprogress": "^0.2.0",
     "@types/webpack-env": "^1.13.9",
@@ -59,6 +64,7 @@
     "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
     "camelcase": "^6.0.0",
     "chalk": "^4.0.0",
     "commander": "^4.0.1",
