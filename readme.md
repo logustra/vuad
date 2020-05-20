@@ -38,6 +38,8 @@
 </div>
 <br />
 
+<img width="1023" alt="Screen Shot 2020-05-21 at 12 02 46 PM" src="https://user-images.githubusercontent.com/13871363/82525219-023b6e80-9b5b-11ea-92b6-fb157710ecaa.png">
+
 ## Learn 7AD
 Learn the design patterns [here](https://github.com/logustra/7ad)
 
