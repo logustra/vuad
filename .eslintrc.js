@@ -18,11 +18,13 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'vue',
+    'jest'
   ],
 
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/recommended',
+    'plugin:jest/recommended',
     'eslint:recommended',
   ],
 

@@ -1,7 +1,7 @@
 <template>
   <div class="v-layout">
     <div 
-      v-if="isOffline"
+      v-if="common.isOffline"
       class="offline"
     >
       You're Offline
@@ -27,8 +27,8 @@ import { SET_OFFLINE } from '@/stores/Common/commonTypes'
 
 @Component
 export default class VLayout extends Vue {
-  @Getter('isOffline') 
-  public isOffline
+  @Getter('common') 
+  public common
 
   @Action(SET_OFFLINE)
   public setOffline

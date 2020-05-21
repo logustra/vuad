@@ -9,7 +9,7 @@ export default {
     state.isFetching = true
   },
 
-  [types.POST_SUCCESS]: (state: PostState, response: PostDataModel[]) => {
+  [types.POST_SUCCESS]: (state: PostState, response: PostDataModel) => {
     state.data = response
     state.isFetching = false
   },

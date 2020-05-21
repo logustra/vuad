@@ -29,5 +29,11 @@ module.exports = {
         'loose': true
       }
     ]
-  ]
+  ],
+
+  env: {
+    test: {
+      plugins: ['@babel/transform-modules-commonjs']
+    }
+  }
 }

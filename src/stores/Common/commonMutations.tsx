@@ -4,6 +4,7 @@ import { CommonState } from '@/typings/commonTypings'
 export default {
   [types.SET_TITLE]: (state: CommonState, response: string) => {
     document.title = response
+    state.title = response
   },
 
   [types.SET_OFFLINE]: (state: CommonState, response: boolean) => {

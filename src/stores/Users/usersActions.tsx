@@ -3,8 +3,8 @@ import { API_USERS } from '@/constants'
 import { httpService } from '@/services'
 
 export default {
-  [types.USERS_REQUEST]: async ({ commit }: { commit: Function }, response: string) => {
-    commit(types.USERS_REQUEST, response)
+  [types.USERS_REQUEST]: async ({ commit }: { commit: Function }) => {
+    commit(types.USERS_REQUEST)
 
     try {
       const { data } = await httpService.get(API_USERS)

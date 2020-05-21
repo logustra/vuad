@@ -17,6 +17,7 @@ let name = 'example'
 const templates = {
   components: {
     default: './create/templates/components/vexample.vue',
+    tests: './create/templates/components/vexample.test.tsx',
     stories: './create/templates/components/vexample.stories.tsx'
   },
 
@@ -39,6 +40,7 @@ const templates = {
       './create/templates/modules/stores/index.tsx'
     ],
 
+    tests: './create/templates/modules/tests/example.test.tsx',
     views: './create/templates/modules/views/exampleIndex.vue',
     router: './create/templates/modules/router.tsx'
   }
@@ -65,25 +67,30 @@ const createFolder = (type, folder) => {
       break
       
     case 'modules': 
-      if (!folder) {
-        path = `./src/modules/${camelCase(name, { pascalCase: true })}`
-        if (!checkPath(path)) shell.mkdir(path)
-
-      } else {
-        if (folder !== 'stores') {
-          pathModule = `./src/${type}/${camelCase(name, { pascalCase: true })}`
-          path = `${pathModule}/${folder}`
-          if (!checkPath(pathModule)) shell.mkdir(pathModule)
-          if (checkPath(pathModule) && !checkPath(path)) shell.mkdir(path)
-          
-        } else {
+      switch(folder) {
+        case 'stores':
           pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
           pathStores = `${pathModule}/stores`
           path = `${pathStores}/${camelCase(name, { pascalCase: true })}`
           if (!checkPath(pathModule)) shell.mkdir(pathModule)
           if (!checkPath(pathStores)) shell.mkdir(pathStores)
           if (checkPath(pathModule) && checkPath(pathStores) && !checkPath(path)) shell.mkdir(path)
-        }
+          break
+
+        case 'tests':
+          pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
+          pathTests = `${pathModule}/${folder}`
+          path = `${pathTests}/stores`
+          if (!checkPath(pathModule)) shell.mkdir(pathModule)
+          if (!checkPath(pathTests)) shell.mkdir(pathTests)
+          if (checkPath(pathModule) && checkPath(pathTests) && !checkPath(path)) shell.mkdir(path)
+          break
+
+        default: 
+          pathModule = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          path = `${pathModule}/${folder}`
+          if (!checkPath(pathModule)) shell.mkdir(pathModule)
+          if (checkPath(pathModule) && !checkPath(path)) shell.mkdir(path)
       }
       break
   }
@@ -100,6 +107,21 @@ const createComponent = {
     if (!checkPath(path)) {
       shell.touch(path)
       shell.exec(`cat ${templates.components.default} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
+  tests: folderName => {
+    const folder = `${createFolder('components', folderName)}/`
+    const file = `v${camelCase(name)}.test.tsx`
+    const path = folder + file
+    
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.components.tests} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -225,6 +247,21 @@ const createModule = {
     }
   },
 
+  tests: () => {
+    const folder = `${createFolder('modules', 'tests')}/`
+    const file = `${camelCase(name)}.test.tsx`
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.tests} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
   views: () => {
     const folder = `${createFolder('modules', 'views')}/`
     const file = `${camelCase(name)}Index.vue`
@@ -261,6 +298,7 @@ const actions = {
     name = componentName
 
     createComponent.default('atoms')
+    createComponent.tests('atoms')
     createComponent.stories('atoms')
   },
 
@@ -268,6 +306,7 @@ const actions = {
     name = componentName
 
     createComponent.default('molecules')
+    createComponent.tests('molecules')
     createComponent.stories('molecules')
   },
 
@@ -275,6 +314,7 @@ const actions = {
     name = componentName
 
     createComponent.default('organisms')
+    createComponent.tests('organisms')
     createComponent.stories('organisms')
   },
 
@@ -282,6 +322,7 @@ const actions = {
     name = componentName
 
     createComponent.default('templates')
+    createComponent.tests('templates')
     createComponent.stories('templates')
   },
 
@@ -293,6 +334,7 @@ const actions = {
     createModule.typings()
     createModule.services()
     createModule.stores()
+    createModule.tests()
     createModule.views()
     createModule.router()
   }

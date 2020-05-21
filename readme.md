@@ -35,6 +35,13 @@
       alt="Storybook"
     >
   </a>
+
+  <a href="https://jestjs.io">
+    <img 
+      src="https://jestjs.io/img/jest-badge.svg?style=flat" 
+      alt="Jest"
+    >
+  </a>
 </div>
 <br />
 
