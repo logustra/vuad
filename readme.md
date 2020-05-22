@@ -15,9 +15,9 @@
     >
   </a>
 
-  <a href="https://github.com/ralali/agent_mitra_cms/releases/tag/v1.0.0">
+  <a href="https://github.com/logustra/vuad/releases/tag/v1.1.0">
     <img 
-      src="https://img.shields.io/static/v1.svg?label=version&message=v1.0.0&style=flat&color=brightgreen" 
+      src="https://img.shields.io/static/v1.svg?label=version&message=1.1.0&style=flat&color=brightgreen" 
       alt="Version"
     >
   </a>
