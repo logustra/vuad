@@ -97,7 +97,6 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      hash: true,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
