@@ -128,8 +128,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "helmet": "^3.22.0",
-    "node-zopfli-es": "^1.0.4",
+    "helmet": "^3.22.1",
+    "node-zopfli-es": "^1.0.5",
     "shrink-ray-current": "^4.0.0"
   }
 }
