@@ -24,19 +24,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config build/webpack.development --progress",
-    "build": "yarn clean:dist && NODE_ENV=production webpack --config build/webpack.production --progress",
+    "build": "pnpm clean:dist && NODE_ENV=production webpack --config build/webpack.production --progress",
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage",
-    "start": "yarn build && node server",
+    "start": "pnpm build && node server",
     "stylelint": "stylelint --config stylelint.config.js 'src/**/*.{vue,scss}'",
     "stylelint:fix": "stylelint --config stylelint.config.js --fix 'src/**/*.{vue,scss}'",
     "linter": "eslint -c .eslintrc.js --ext .js,.vue,.ts,.tsx, src",
     "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts,.tsx, src",
-    "lint": "yarn linter && yarn stylelint",
-    "lint:fix": "yarn linter:fix && yarn stylelint:fix",
+    "lint": "pnpm linter && pnpm stylelint",
+    "lint:fix": "pnpm linter:fix && pnpm stylelint:fix",
     "story": "start-storybook",
-    "test": "yarn clean:coverage && NODE_ENV=test jest",
-    "test:watch": "yarn test --watchAll"
+    "test": "pnpm clean:coverage && NODE_ENV=test jest",
+    "test:watch": "pnpm test --watchAll"
   },
   "config": {
     "commitizen": {
@@ -49,6 +49,7 @@
     "@babel/plugin-proposal-decorators": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/plugin-transform-typescript": "^7.8.3",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.8.3",
@@ -96,6 +97,7 @@
     "nprogress": "^0.2.0",
     "postcss-loader": "^3.0.0",
     "resource-hints-webpack-plugin": "^0.0.2",
+    "rimraf": "^3.0.2",
     "sass-loader": "^7.1.0",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "shelljs": "^0.8.3",
@@ -127,7 +129,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "helmet": "^3.22.0",
-    "iltorb": "^2.4.5",
     "node-zopfli-es": "^1.0.4",
     "shrink-ray-current": "^4.0.0"
   }

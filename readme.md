@@ -52,25 +52,32 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 
 ## Requirement
   - [node.js](http://nodejs.org/)
-  - [yarn](https://yarnpkg.com/en/)
+  - [nvm](https://github.com/nvm-sh/nvm)
+  - [pnpm](https://pnpm.js.org/en/installation)
 
 ## Quick Start
 
 ```bash
+# install nodejs with specific version
+$ nvm install 12.6.3
+
+# using specific nodejs
+$ nvm use 12.6.3
+
 # clone repository
 $ git clone https://github.com/logustra/vuad.git
 
 # open folder vuad
 $ cd vuad
 
-# instal dependencies
-$ yarn install
+# instal packages
+$ pnpm install
 
 # copy file .env.example to .env
 $ cp .env.example .env
 
 # build and serve with express
-$ yarn start
+$ pnpm start
 ```
 
 ## Run with Docker
