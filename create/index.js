@@ -42,6 +42,7 @@ const templates = {
 
     tests: './create/templates/modules/tests/example.test.tsx',
     views: './create/templates/modules/views/exampleIndex.vue',
+    store: './create/templates/modules/store.tsx',
     router: './create/templates/modules/router.tsx'
   }
 }
@@ -84,6 +85,16 @@ const createFolder = (type, folder) => {
           if (!checkPath(pathModule)) shell.mkdir(pathModule)
           if (!checkPath(pathTests)) shell.mkdir(pathTests)
           if (checkPath(pathModule) && checkPath(pathTests) && !checkPath(path)) shell.mkdir(path)
+          break
+
+        case 'store':
+          path = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          if (!checkPath(path)) shell.mkdir(path)
+          break
+
+        case 'router':
+          path = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          if (!checkPath(path)) shell.mkdir(path)
           break
 
         default: 
@@ -277,8 +288,23 @@ const createModule = {
     }
   },
 
+  store: () => {
+    const folder = `${createFolder('modules', 'store')}/`
+    const file = 'store.tsx'
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.store} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
   router: () => {
-    const folder = `${createFolder('modules')}/`
+    const folder = `${createFolder('modules', 'router')}/`
     const file = 'router.tsx'
     const path = folder + file
 
@@ -336,6 +362,7 @@ const actions = {
     createModule.stores()
     createModule.tests()
     createModule.views()
+    createModule.store()
     createModule.router()
   }
 }

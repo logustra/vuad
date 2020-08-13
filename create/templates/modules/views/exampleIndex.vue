@@ -24,7 +24,7 @@ import { VLoading } from 'atoms'
   }
 })
 
-export default class PostIndex extends Vue {
+export default class ExampleIndex extends Vue {
   @Getter('example')
   public example
 

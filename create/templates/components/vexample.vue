@@ -1,5 +1,5 @@
 <template>
-  <div class="r-example">
+  <div class="v-example">
     <slot /> 
   </div>
 </template>
@@ -25,7 +25,7 @@ export default class VExample extends Props {}
 </script>
 
 <style lang="scss">
-.r-example {
+.v-example {
   // your style
 }
 </style>
