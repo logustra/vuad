@@ -1,6 +1,15 @@
 <template>
   <div>
     Bismillah, Hello World!
+    
+    <Fa 
+      :icon="icons.fasEnvelope" 
+      class="ml-1"
+    />
+    <Fa 
+      :icon="icons.farEnvelope" 
+      class="ml-1"
+    />
   </div>
 </template>
 
@@ -16,6 +25,9 @@ import {
 
 import { EXAMPLE_REQUEST } from '../stores/Example/exampleTypes'
 
+import { faEnvelope as fasEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons'
+
 import { VLoading } from 'atoms'
 
 @Component({
@@ -25,6 +37,11 @@ import { VLoading } from 'atoms'
 })
 
 export default class ExampleIndex extends Vue {
+  icons = {
+    fasEnvelope,
+    farEnvelope
+  }
+
   @Getter('example')
   public example
 

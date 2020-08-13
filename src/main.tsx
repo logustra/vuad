@@ -2,6 +2,8 @@ import Vue, { VNode } from 'vue'
 
 import './libs/vuex'
 import './libs/vue-router'
+import './libs/vuelidate'
+import './libs/font-awesome'
 
 import store from './store'
 import router from './router'
