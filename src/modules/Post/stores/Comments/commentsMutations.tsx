@@ -1,5 +1,5 @@
 import * as types from './commentsTypes'
-import { 
+import {
   CommentsState,
   CommentsDataModel
 } from '../../typings/commentsTypings'
@@ -16,7 +16,7 @@ export default {
 
   [types.COMMENTS_ERROR]: (state: CommentsState, response: Error) => {
     state.data = []
-    state.isFetching = false,
+    state.isFetching = false
     state.isError = response
   }
 }

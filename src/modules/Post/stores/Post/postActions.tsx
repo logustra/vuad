@@ -2,7 +2,7 @@ import * as types from './postTypes'
 import { API_POST } from '../../constants'
 import { postService } from '../../services'
 
-export default {  
+export default {
   [types.POST_REQUEST]: async ({ commit }: { commit: Function }, id: number) => {
     commit(types.POST_REQUEST)
 

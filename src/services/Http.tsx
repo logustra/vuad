@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios'
 
 export default class Http {
   protected axios: AxiosInstance
-  
+
   /**
    * @param  {object} axiosConfig
    */
@@ -75,7 +75,7 @@ export default class Http {
       throw error
     }
   }
-  
+
   /**
    * @param  {string} url
    */

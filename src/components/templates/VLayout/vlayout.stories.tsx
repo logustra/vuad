@@ -8,7 +8,7 @@ const stories = storiesOf('Templates/VLayout', module)
 
 stories.add('Default', () => ({
   store,
-  
+
   components: {
     VLayout
   },

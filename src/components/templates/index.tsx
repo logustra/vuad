@@ -1,7 +1,7 @@
 import VLayout from './VLayout/vlayout.vue'
 import VPreloader from './VPreloader/vpreloader'
 
-export { 
+export {
   VLayout,
   VPreloader
 }

@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
 
 @Component
@@ -16,7 +16,7 @@ export default class VCard extends Vue {}
 
 <style lang="scss">
 .v-card {
-  @apply 
+  @apply
     p-4
     rounded
     bg-white;

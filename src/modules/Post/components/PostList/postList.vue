@@ -3,12 +3,12 @@
     <VLoading v-if="data.isFetching" />
     <VError v-if="data.isError" />
     <div v-if="data.data.length !== 0">
-      <div 
-        v-for="item in data.data" 
-        :key="`post-${item.id}`" 
+      <div
+        v-for="item in data.data"
+        :key="`post-${item.id}`"
       >
         <VCard class="mb-4">
-          <RouterLink 
+          <RouterLink
             class="title"
             :to="{
               name: 'post.detail',
@@ -21,13 +21,13 @@
           </RouterLink>
 
           <div v-if="withAuthor && users && users.data.length !== 0">
-            Written by 
-            <RouterLink 
+            Written by
+            <RouterLink
               class="link"
-              :to="{ 
-                name: 'post.author', 
-                params: { 
-                  id: item.userId 
+              :to="{
+                name: 'post.author',
+                params: {
+                  id: item.userId
                 }
               }"
             >
@@ -45,14 +45,14 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
 
-import { 
+import {
   VError,
-  VLoading 
+  VLoading
 } from 'atoms'
 import { VCard } from 'molecules'
 

@@ -19,7 +19,7 @@
       Posted Article
     </h3>
 
-    <PostList 
+    <PostList
       :with-author="false"
       :data="posts"
     />
@@ -27,13 +27,13 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
-import { 
-  Getter, 
-  Action 
+import {
+  Getter,
+  Action
 } from 'vuex-class'
 
 import { USER_REQUEST } from '../stores/User/userTypes'
@@ -43,10 +43,10 @@ import { SET_TITLE } from '@/stores/Common/commonTypes'
 
 import { PostList } from '../components'
 
-import { 
+import {
   VDivider,
   VError,
-  VLoading 
+  VLoading
 } from 'atoms'
 import { VCard } from 'molecules'
 
@@ -81,7 +81,7 @@ export default class PostAuthor extends Vue {
 
   mounted () {
     this.id = parseInt(this.$route.params.id)
-    
+
     this.setTitle(this.title)
     this.userRequest(this.id)
     this.postsRequest({ userId: this.id })

@@ -1,5 +1,5 @@
 import * as types from './postTypes'
-import { 
+import {
   PostState,
   PostDataModel
 } from '../../typings/postTypings'
@@ -16,7 +16,7 @@ export default {
 
   [types.POST_ERROR]: (state: PostState, response: Error) => {
     state.data = {}
-    state.isFetching = false,
+    state.isFetching = false
     state.isError = response
   }
 }

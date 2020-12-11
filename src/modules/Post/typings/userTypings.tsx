@@ -7,5 +7,5 @@ export interface UserState {
 export interface UserDataModel {
   name: string,
   email: string,
-  website: string 
+  website: string
 }

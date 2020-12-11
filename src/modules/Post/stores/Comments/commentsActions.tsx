@@ -2,7 +2,7 @@ import * as types from './commentsTypes'
 import { API_COMMENTS } from '../../constants'
 import { postService } from '../../services'
 
-export default {  
+export default {
   [types.COMMENTS_REQUEST]: async ({ commit }: { commit: Function }, params: {}) => {
     commit(types.COMMENTS_REQUEST)
 

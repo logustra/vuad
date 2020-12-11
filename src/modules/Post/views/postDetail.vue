@@ -8,13 +8,13 @@
       </h2>
 
       <div v-if="post.data.userId && users.data.length !== 0">
-        Written by 
-        <RouterLink 
+        Written by
+        <RouterLink
           class="link"
-          :to="{ 
-            name: 'post.author', 
-            params: { 
-              id: post.data.userId 
+          :to="{
+            name: 'post.author',
+            params: {
+              id: post.data.userId
             }
           }"
         >
@@ -52,13 +52,13 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
-import { 
-  Getter, 
-  Action 
+import {
+  Getter,
+  Action
 } from 'vuex-class'
 
 import { POST_REQUEST } from '../stores/Post/postTypes'
@@ -67,9 +67,9 @@ import { COMMENTS_REQUEST } from '../stores/Comments/commentsTypes'
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 import { USERS_REQUEST } from '@/stores/Users/usersTypes'
 
-import { 
+import {
   VError,
-  VLoading 
+  VLoading
 } from 'atoms'
 import { VCard } from 'molecules'
 
@@ -88,19 +88,19 @@ export default class PostAuthor extends Vue {
   @Action(SET_TITLE)
   public setTitle
 
-  @Getter('users') 
+  @Getter('users')
   public users
 
   @Action(USERS_REQUEST)
   public usersRequest
 
-  @Getter('post') 
+  @Getter('post')
   public post
 
   @Action(POST_REQUEST)
   public postRequest
 
-  @Getter('comments') 
+  @Getter('comments')
   public comments
 
   @Action(COMMENTS_REQUEST)
@@ -112,7 +112,7 @@ export default class PostAuthor extends Vue {
 
   mounted () {
     this.id = parseInt(this.$route.params.id)
-    
+
     this.setTitle(this.title)
     this.usersRequest()
     this.postRequest(this.id)

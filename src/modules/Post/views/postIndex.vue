@@ -3,8 +3,8 @@
     <h2 class="text-xl font-bold mb-5">
       Vuad
     </h2>
-    
-    <PostList 
+
+    <PostList
       :with-author="true"
       :users="users"
       :data="posts"
@@ -13,13 +13,13 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
-import { 
-  Getter, 
-  Action 
+import {
+  Getter,
+  Action
 } from 'vuex-class'
 
 import { POSTS_REQUEST } from '../stores/Posts/postsTypes'

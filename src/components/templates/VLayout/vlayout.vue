@@ -1,6 +1,6 @@
 <template>
   <div class="v-layout">
-    <div 
+    <div
       v-if="common.isOffline"
       class="offline"
     >
@@ -14,20 +14,20 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
-import { 
-  Getter, 
-  Action 
+import {
+  Getter,
+  Action
 } from 'vuex-class'
 
 import { SET_OFFLINE } from '@/stores/Common/commonTypes'
 
 @Component
 export default class VLayout extends Vue {
-  @Getter('common') 
+  @Getter('common')
   public common
 
   @Action(SET_OFFLINE)
@@ -56,19 +56,20 @@ export default class VLayout extends Vue {
     justify-center;
 
   > .offline {
-    @apply 
-      fixed 
-      bg-red-500 
-      text-white 
-      text-center 
-      p-1 
-      w-full 
-      left-0 
+    @apply
+      fixed
+      bg-red-500
+      text-white
+      text-center
+      p-1
+      w-full
+      left-0
       z-20;
   }
 
   > .container {
     @apply p-4;
+
     width: rem(480px);
   }
 }

@@ -1,6 +1,6 @@
 import * as types from './usersTypes'
-import { 
-  UsersState, 
+import {
+  UsersState,
   UsersDataModel
 } from '@/typings/usersTypings'
 
@@ -16,7 +16,7 @@ export default {
 
   [types.USERS_ERROR]: (state: UsersState, response: Error) => {
     state.data = []
-    state.isFetching = false,
+    state.isFetching = false
     state.isError = response
   }
 }

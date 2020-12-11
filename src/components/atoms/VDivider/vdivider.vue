@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import { 
-  Vue, 
-  Component 
+import {
+  Vue,
+  Component
 } from 'vue-property-decorator'
 
 @Component
@@ -16,6 +16,6 @@ export default class VDivider extends Vue {}
 .v-divider {
   @apply
     border-black
-    my-2
+    my-2;
 }
 </style>
