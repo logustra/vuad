@@ -73,9 +73,6 @@ $ cd vuad
 # instal packages
 $ pnpm install
 
-# copy file .env.example to .env
-$ cp .env.example .env
-
 # build and serve with express
 $ pnpm start
 ```

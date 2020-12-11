@@ -13,7 +13,7 @@
     "ddd-example",
     "boilerplate",
     "vue-boilerplate",
-    "storybook"
+    "webpack"
   ],
   "repository": {
     "type": "git",
@@ -23,8 +23,8 @@
   "author": "Faizal Andyka Putra",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config build/webpack.development --progress",
-    "build": "pnpm clean:dist && NODE_ENV=production webpack --config build/webpack.production --progress",
+    "dev": "cp env/env.development .env && NODE_ENV=development webpack-dev-server --config build/webpack.development --progress",
+    "build": "pnpm clean:dist && cp env/env.production .env && NODE_ENV=production webpack --config build/webpack.production --progress",
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage",
     "start": "pnpm build && node server",
