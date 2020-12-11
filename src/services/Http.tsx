@@ -2,30 +2,37 @@ import axios, { AxiosInstance } from 'axios'
 
 export default class Http {
   protected axios: AxiosInstance
-
+  
+  /**
+   * @param  {object} axiosConfig
+   */
   public constructor (axiosConfig: object) {
     this.axios = axios.create(axiosConfig)
   }
 
-  public get (url: string, params?: {}, responseType?: string) {
+  /**
+   * @param  {string} url
+   * @param  {object} params?
+   * @param  {object} config?
+   */
+  public get (url: string, params?: object, config?: object) {
     try {
-      const config: any = {
+      return this.axios.request({
         method: 'get',
         url,
-        params
-      }
-
-      if (responseType) {
-        config.responseType = responseType
-      }
-
-      return this.axios.request(config)
+        params,
+        ...config
+      })
     } catch (error) {
-      throw new Error(error)
+      throw error
     }
   }
 
-  public post (url: string, data: {}) {
+  /**
+   * @param  {string} url
+   * @param  {object} data
+   */
+  public post (url: string, data: object) {
     try {
       return this.axios.request({
         method: 'post',
@@ -33,11 +40,15 @@ export default class Http {
         data
       })
     } catch (error) {
-      throw new Error(error)
+      throw error
     }
   }
 
-  public put (url: string, data: {}) {
+  /**
+   * @param  {string} url
+   * @param  {object} data
+   */
+  public put (url: string, data: object) {
     try {
       return this.axios.request({
         method: 'put',
@@ -45,11 +56,15 @@ export default class Http {
         data
       })
     } catch (error) {
-      throw new Error(error)
+      throw error
     }
   }
 
-  public patch (url: string, data: {}) {
+  /**
+   * @param  {string} url
+   * @param  {object} data
+   */
+  public patch (url: string, data: object) {
     try {
       return this.axios.request({
         method: 'patch',
@@ -57,10 +72,13 @@ export default class Http {
         data
       })
     } catch (error) {
-      throw new Error(error)
+      throw error
     }
   }
-
+  
+  /**
+   * @param  {string} url
+   */
   public delete (url: string) {
     try {
       return this.axios.request({
@@ -68,7 +86,7 @@ export default class Http {
         url
       })
     } catch (error) {
-      throw new Error(error)
+      throw error
     }
   }
 }
