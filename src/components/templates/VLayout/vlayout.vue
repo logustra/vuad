@@ -50,6 +50,8 @@ export default class VLayout extends Vue {
 </script>
 
 <style lang="scss">
+@import '@/styles/utils/functions.scss';
+
 .v-layout {
   @apply
     flex

@@ -30,7 +30,7 @@ module.exports = merge(common, {
         test: /\.vue$/,
         exclude: /node_modules/,
         use: [
-          'vue-loader', 
+          'vue-loader',
           'eslint-loader'
         ]
       },
@@ -73,7 +73,7 @@ module.exports = merge(common, {
               shadowMode: false
             }
           },
-          
+
           {
             loader: 'css-loader',
             options: {
@@ -93,10 +93,7 @@ module.exports = merge(common, {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              outputStyle: 'expanded',
-              data: `
-                @import '@/styles/index.scss';
-              `
+              outputStyle: 'expanded'
             }
           }
         ]

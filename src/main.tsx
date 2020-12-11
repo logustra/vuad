@@ -9,6 +9,7 @@ import store from './store'
 import router from './router'
 
 import App from './App.vue'
+import './styles/index.scss'
 import './styles/vendors/tailwind.scss'
 
 Vue.config.productionTip = false

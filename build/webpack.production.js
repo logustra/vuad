@@ -52,7 +52,7 @@ module.exports = merge(common, {
           }
         ]
       },
-      
+
       {
         test: /\.scss$/,
         use: [
@@ -83,10 +83,7 @@ module.exports = merge(common, {
             loader: 'sass-loader',
             options: {
               sourceMap: false,
-              outputStyle: 'compressed',
-              data: `
-                @import '@/styles/index.scss';
-              `
+              outputStyle: 'compressed'
             }
           }
         ]
