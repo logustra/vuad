@@ -5,11 +5,11 @@ import getters from './usersGetters'
 import mutations from './usersMutations'
 import actions from './usersActions'
 
-const module: Module<any, any> = {
+const users: Module<any, any> = {
   state,
   getters,
   mutations,
   actions
 }
 
-export default module
+export default users
