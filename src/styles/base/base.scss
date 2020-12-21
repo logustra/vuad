@@ -1,7 +1,11 @@
+@use './colors.scss';
+@use './typography.scss';
+@use '../utils/functions.scss';
+
 body {
   width: 100%;
   height: 100vh;
-  font-family: $lato;
-  font-size: rem(14px);
-  background-color: $gray-100;
+  font-family: typography.$lato;
+  font-size: functions.rem(14px);
+  background-color: colors.$gray-100;
 }

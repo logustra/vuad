@@ -63,10 +63,7 @@ module.exports = async ({ config }) => {
         loader: 'sass-loader',
         options: {
           sourceMap: false,
-          outputStyle: 'compressed',
-          data: `
-            @import '@/styles/index.scss';
-          `
+          outputStyle: 'compressed'
         }
       }
     ]

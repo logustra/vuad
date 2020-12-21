@@ -1,8 +1,2 @@
-// utils
-@import './utils/functions.scss';
-
 // base
-@import './base/colors.scss';
-@import './base/opacity.scss';
-@import './base/typography.scss';
-@import './base/base.scss';
+@use './base/base.scss';

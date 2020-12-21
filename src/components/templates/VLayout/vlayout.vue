@@ -50,7 +50,7 @@ export default class VLayout extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/utils/functions.scss';
+@use '@/styles/utils/functions.scss';
 
 .v-layout {
   @apply
@@ -72,7 +72,7 @@ export default class VLayout extends Vue {
   > .container {
     @apply p-4;
 
-    width: rem(480px);
+    width: functions.rem(480px);
   }
 }
 </style>
