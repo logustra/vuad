@@ -6,7 +6,7 @@ const domainStoreFiles = require.context('./modules', true, /store.tsx/)
 
 domainStoreFiles.keys().map((item: string) => {
   for (const key in domainStoreFiles(item)) {
-    globalStores[key] = domainStoreFiles(item)[key]
+    domainStores[key] = domainStoreFiles(item)[key]
   }
 })
 
