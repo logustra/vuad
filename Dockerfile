@@ -1,5 +1,5 @@
 # Stage Base
-FROM node:12.18.1-alpine AS base
+FROM node:12.21.0-alpine AS base
 RUN apk add --update --no-cache python make g++
 RUN npm install pnpm --global
 RUN pnpm install node-gyp --global
