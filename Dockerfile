@@ -17,7 +17,7 @@ RUN pnpm install
 RUN pnpm build
 
 # Stage Server
-FROM node:12.21.0-alpine as server
+FROM node:12.18.1-alpine as server
 WORKDIR /app
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
