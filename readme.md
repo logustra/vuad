@@ -1,10 +1,17 @@
 <div align="center">
   <h2>Vuad</h2>
 
-  <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvuad?ref=badge_shield">
+  <a href="https://github.com/logustra/vuad/releases/tag/v1.1.0">
     <img 
-      src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvuad.svg?type=shield&color=brightgreen" 
-      alt="FOSSA Status"
+      src="https://img.shields.io/static/v1.svg?label=version&message=1.1.0&style=flat&color=brightgreen" 
+      alt="Version"
+    >
+  </a>
+
+  <a href="https://github.com/logustra/vuad/blob/master/license.md">
+    <img 
+      src="https://img.shields.io/github/license/logustra/vuad"
+      alt="License" 
     >
   </a>
 
@@ -15,17 +22,10 @@
     >
   </a>
 
-  <a href="https://github.com/logustra/vuad/releases/tag/v1.1.0">
+  <a href="http://commitizen.github.io/cz-cli">
     <img 
-      src="https://img.shields.io/static/v1.svg?label=version&message=1.1.0&style=flat&color=brightgreen" 
-      alt="Version"
-    >
-  </a>
-
-  <a href="https://conventionalcommits.org">
-    <img 
-      src="https://img.shields.io/badge/conventional%20commits-1.0.0-brightgreen.svg" 
-      alt="Conventional Commits"
+      src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat" 
+      alt="Commitizen"
     >
   </a>
 
@@ -47,8 +47,8 @@
 
 <img width="1023" alt="Screen Shot 2020-05-21 at 12 02 46 PM" src="https://user-images.githubusercontent.com/13871363/82525219-023b6e80-9b5b-11ea-92b6-fb157710ecaa.png">
 
-## Learn 7AD
-Learn the design patterns [here](https://github.com/logustra/7ad)
+## Design Pattern
+Learn the design pattern [here](https://github.com/logustra/dave)
 
 ## Requirement
   - [node.js](http://nodejs.org/)
@@ -106,7 +106,7 @@ $ node create module home
 If you like my works, you can cheer me on here 😆
 
 &nbsp; &nbsp; 🇮🇩 [Trakteer](https://trakteer.id/logustra/tip)<br>
-&nbsp; &nbsp; 🌍 [Ko-Fi]()<br>
+&nbsp; &nbsp; 🌍 [Ko-Fi](https://ko-fi.com/logustra)<br>
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvuad.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvuad?ref=badge_large)
+MIT License © 2020 Faizal Andyka
